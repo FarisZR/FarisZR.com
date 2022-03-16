@@ -1,3 +1,10 @@
 baseURL: http://fariszr.com
 languageCode: ar-SA
 tile: FarisZR
+
+module:
+  # uncomment line below for temporary local development of module
+  # replacements: "github.com/CaiJimmy/hugo-theme-stack/v3 -> ../../hugo-theme-stack"
+  imports:
+    - path: github.com/CaiJimmy/hugo-theme-stack/v3
+      disable: false
