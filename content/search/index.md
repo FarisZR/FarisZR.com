@@ -1,5 +1,5 @@
 ---
-title: "Search"
+title: "بحث"
 slug: "search"
 layout: "search"
 outputs:
