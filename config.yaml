@@ -43,6 +43,12 @@ languages:
           params:
             icon: gitlab
 
+        - identifier: codeberg
+          name: Codeberg
+          url: https://codeberg.org/FarisZR
+          params:
+            icon: codeberg
+
         - identifier: twitter
           name: Twitter
           url: https://twitter.com/fareszr
@@ -89,6 +95,12 @@ languages:
           url: https://gitlab.com/FarisZR
           params:
             icon: gitlab
+
+        - identifier: codeberg
+          name: Codeberg
+          url: https://codeberg.org/FarisZR
+          params:
+            icon: codeberg
 
         - identifier: twitter
           name: Twitter
