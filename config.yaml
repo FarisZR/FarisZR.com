@@ -8,3 +8,91 @@ module:
   imports:
     - path: github.com/CaiJimmy/hugo-theme-stack/v3
       disable: false
+
+DefaultContentLanguage: ar
+
+languages:
+  ar:
+    languagedirection: rtl
+    languageName: العربية
+    # title: مدونتي
+    # contentDir: content/arabic
+    sidebar:
+      subtitle:
+      avatar:
+        local: false
+        src: /profile.webp
+    menu:
+      main:
+        - identifier: home
+          name: الرئيسية
+          url: /
+          weight: -100
+          pre: home
+
+      social:
+        - identifier: github
+          name: GitHub
+          url: https://github.com/FarisZR
+          params:
+            icon: brand-github
+
+        - identifier: gitlab
+          name: GitLab
+          url: https://gitlab.com/FarisZR
+          params:
+            icon: gitlab
+
+        - identifier: twitter
+          name: Twitter
+          url: https://twitter.com/fareszr
+          params:
+            icon: brand-twitter
+
+    related:
+      includeNewer: true
+      threshold: 60
+      toLower: false
+      indices:
+        - name: وسوم
+          weight: 100
+        - name: اقسام
+          weight: 200
+
+    weight: 1
+
+  en:
+    languageName: English
+    sidebar:
+      subtitle:
+      avatar:
+        local: false
+        src: /profile.webp
+    menu:
+      main:
+        - identifier: home
+          name: home
+          url: /en
+          weight: -100
+          params:
+            icon: home
+
+      social:
+        - identifier: github
+          name: GitHub
+          url: https://github.com/FarisZR
+          params:
+            icon: brand-github
+
+        - identifier: gitlab
+          name: GitLab
+          url: https://gitlab.com/FarisZR
+          params:
+            icon: gitlab
+
+        - identifier: twitter
+          name: Twitter
+          url: https://twitter.com/fareszr
+          params:
+            icon: brand-twitter
+    weight: 2
