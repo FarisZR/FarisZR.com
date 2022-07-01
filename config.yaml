@@ -32,6 +32,14 @@ languages:
           params:
             icon: home
 
+        - identifier: links
+          name: روابط / مشاريع
+          url: /links
+          weight: 3
+          params:
+            icon: link
+
+
         - identifier: search
           name: البحث
           url: /search
@@ -173,6 +181,9 @@ params:
       - type: archives
         params:
           limit: 5
+      - type: categories
+        params:
+          limit: 10
       - type: tag-cloud
         params:
           limit: 10
