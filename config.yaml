@@ -6,6 +6,8 @@ module:
   # uncomment line below for temporary local development of module
   # replacements: "github.com/CaiJimmy/hugo-theme-stack/v3 -> ../../hugo-theme-stack"
   imports:
+    - path: overrides
+      disable: false
     - path: github.com/CaiJimmy/hugo-theme-stack/v3
       disable: false
 
