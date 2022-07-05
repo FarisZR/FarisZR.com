@@ -8,6 +8,8 @@ module:
   imports:
     - path: overrides
       disable: false
+    - path: github.com/FarisZR/Hugo-stack-no-cdn
+      disable: false
     - path: github.com/CaiJimmy/hugo-theme-stack/v3
       disable: false
 
