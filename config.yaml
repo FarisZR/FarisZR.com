@@ -21,6 +21,7 @@ languages:
     languageName: العربية
     # title: مدونتي
     # contentDir: content/arabic
+    weight: 1
     sidebar:
       subtitle:
       avatar:
@@ -43,45 +44,48 @@ languages:
           params:
             icon: link
 
-
         - identifier: search
           name: بحث
           url: /search
           weight: 5
-          params: 
+          params:
             icon: search
 
         - identifier: Archives
           name: الأرشيف
           url: /archives
           weight: 5
-          params: 
+          params:
             icon: archives
 
       social:
-        - identifier: github
-          name: GitHub
-          url: https://github.com/FarisZR
+        - identifier: twitter
+          name: Twitter
+          url: https://twitter.com/fareszr
+          weight: 1
           params:
-            icon: brand-github
+            icon: brand-twitter
 
         - identifier: gitlab
           name: GitLab
           url: https://gitlab.com/FarisZR
+          weight: 2
           params:
             icon: gitlab
+
+        - identifier: github
+          name: GitHub
+          url: https://github.com/FarisZR
+          weight: 3
+          params:
+            icon: brand-github
 
         - identifier: codeberg
           name: Codeberg
           url: https://codeberg.org/FarisZR
+          weight: 4
           params:
             icon: codeberg
-
-        - identifier: twitter
-          name: Twitter
-          url: https://twitter.com/fareszr
-          params:
-            icon: brand-twitter
 
     related:
       includeNewer: true
@@ -93,8 +97,6 @@ languages:
         - name: اقسام
           weight: 200
 
-    weight: 1
-
   en:
     languageName: English
     sidebar:
@@ -102,6 +104,7 @@ languages:
       avatar:
         local: false
         src: /profile.webp
+    weight: 2
 
     menu:
       main:
@@ -127,30 +130,33 @@ languages:
             icon: archives
 
       social:
-        - identifier: github
-          name: GitHub
-          url: https://github.com/FarisZR
+        - identifier: twitter
+          name: Twitter
+          url: https://twitter.com/fareszr
+          weight: 1
           params:
-            icon: brand-github
+            icon: brand-twitter
 
         - identifier: gitlab
           name: GitLab
           url: https://gitlab.com/FarisZR
+          weight: 2
           params:
             icon: gitlab
+
+        - identifier: github
+          name: GitHub
+          url: https://github.com/FarisZR
+          weight: 3
+          params:
+            icon: brand-github
 
         - identifier: codeberg
           name: Codeberg
           url: https://codeberg.org/FarisZR
+          weight: 4
           params:
             icon: codeberg
-
-        - identifier: twitter
-          name: Twitter
-          url: https://twitter.com/fareszr
-          params:
-            icon: brand-twitter
-    weight: 2
 
 permalinks:
   post: /p/:slug/
