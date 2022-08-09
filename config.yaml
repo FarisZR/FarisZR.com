@@ -227,6 +227,21 @@ params:
     content:
       enabled: true
 
+  comments:
+      enabled: true
+      provider: giscus
+
+      giscus:
+        repo: FarisZR/comments
+        repoID: R_kgDOHyxZfA
+        category: Comments
+        categoryID: DIC_kwDOHyxZfM4CQtrc
+        mapping: title
+        lightTheme: light
+        darkTheme: dark
+        reactionsEnabled: 1
+        emitMetadata: 0
+
 related:
   includeNewer: true
   threshold: 60
