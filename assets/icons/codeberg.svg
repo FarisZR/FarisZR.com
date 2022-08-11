@@ -62,9 +62,9 @@
       <stop
          id="stop6926-5"
          offset="0.49517274"
-         style="stop-color:#ffffff;stop-opacity:0.30000001;" />
+         style="stop-color:currentColor;stop-opacity:0.30000001;" />
       <stop
-         style="stop-color:#ffffff;stop-opacity:0.30000001;"
+         style="stop-color:currentColor;stop-opacity:0.30000001;"
          offset="1"
          id="stop6922-3" />
     </linearGradient>
