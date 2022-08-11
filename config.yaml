@@ -37,12 +37,26 @@ languages:
           params:
             icon: home
 
-        - identifier: links
-          name: روابط / مشاريع
-          url: /links
+        - identifier: projects
+          name: مشاريعي
+          url: /projects
+          weight: 2
+          params:
+            icon: grid
+
+        - identifier: about
+          name: عني
+          url: /about
           weight: 3
           params:
-            icon: link
+            icon: user
+
+        - identifier: Archives
+          name: الأرشيف
+          url: /archives
+          weight: 4
+          params:
+            icon: archives
 
         - identifier: search
           name: بحث
@@ -50,13 +64,6 @@ languages:
           weight: 5
           params:
             icon: search
-
-        - identifier: Archives
-          name: الأرشيف
-          url: /archives
-          weight: 5
-          params:
-            icon: archives
 
       social:
         - identifier: twitter
@@ -114,6 +121,20 @@ languages:
           weight: 1
           params:
             icon: home
+
+        - identifier: projects
+          name: My Projects
+          url: /en/projects
+          weight: 2
+          params:
+            icon: grid
+
+        - identifier: about
+          name: About
+          url: /en/about
+          weight: 3
+          params:
+            icon: user
 
         - identifier: search
           name: Search
