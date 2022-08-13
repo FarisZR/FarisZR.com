@@ -1,9 +1,47 @@
 <style>
     @import url('/fonts/stylesheet.css');
-</style> 
+</style>
 
 <style>
 :root {
-    --base-font-family: "Tajawal", var(--sys-font-family), var(--zh-font-family), sans-serif;
+        --base-font-family: "Tajawal", var(--sys-font-family), var(--zh-font-family), sans-serif;
+        --main-top-padding: 35px;
+        --body-background: #f5f5fa;
+        --accent-color: #F7D750;
+        --accent-color-darker: #d19200;
+        --accent-color-text: rgb(0, 0, 0);
+        --body-text-color: #a3a3a3; /* make unselected text clearer*/
+        --tag-border-radius: 4px;
+        --section-separation: 40px;
+        --scrollbar-thumb: #F7D750;
+        --scrollbar-track: var(--body-background);
+    }
+
+    /* use darker text color in light mode, to increase readability */
+    a {
+        color: var(--accent-color-darker);
+    }
+    .menu li.current a {
+        color: var(--accent-color-darker);
+    }
+
+    footer.site-footer .copyright {
+    color: var(--accent-color-darker);
 }
+
+    :root[data-scheme=dark] {
+        --body-background: #000000;
+        --accent-color: #F1C53A;
+        --accent-color-darker: #F1C53A;
+        --accent-color-text: #000;
+        --body-text-color: rgba(255, 255, 255, 0.7);
+        --scrollbar-thumb: #F1C53A;
+        --scrollbar-track: var(--body-background);
+        --card-background: #1b1b1b;
+        --card-background-selected: rgba(255, 255, 255, 0.16);
+        --card-text-color-main: rgba(255, 255, 255, 0.9);
+        --card-text-color-secondary: rgba(255, 255, 255, 0.7);
+        --card-text-color-tertiary: rgba(255, 255, 255, 0.5);
+        --card-separator-color: rgba(255, 255, 255, 0.12);
+    }
 </style>
