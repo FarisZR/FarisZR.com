@@ -1,0 +1,42 @@
+workflow:
+    rules:
+        - if: $CI_COMMIT_BRANCH == "$CI_DEFAULT_BRANCH"
+        - if: $CI_PIPELINE_SOURCE == "push"
+        # Allow run using the Run pipeline button
+        - if: $CI_PIPELINE_SOURCE == "web"
+        - if: $CI_COMMIT_TITLE =~ /skip-ci$/
+          when: never
+
+stages:
+    - build
+    - deploy
+
+hugo_build:
+    image: klakegg/hugo:ext-alpine-ci
+    stage: build
+    script:
+        - hugo
+    artifacts:
+        paths:
+            - public
+        expire_in: 4 days
+
+Deploy:
+    stage: deploy
+    needs:
+        - hugo_build
+    image: alpine:latest
+    before_script:
+        - apk add openssh rsync
+        - mkdir -p ~/.ssh
+        - eval $(ssh-agent -s)
+        - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+        - ssh-add <(echo "$SSH_KEY")
+        - echo "$SSH_KEY" > ~/.ssh/id_key
+    script:
+        - rsync -avuz -e "ssh -p ${SSH_PORT} -i ~/.ssh/id_key" public/* $SSH_SERVER
+    environment:
+        name: Main website
+        url: https://fariszr.com
+    only:
+        - main
