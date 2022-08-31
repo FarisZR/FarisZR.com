@@ -235,7 +235,7 @@ params:
     opengraph:
       enabled: true
       local: false
-      src:
+      src: /preview.jpeg
 
   colorScheme:
     # Display toggle
