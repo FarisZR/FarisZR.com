@@ -26,8 +26,8 @@ languages:
       subtitle: المدير التقني في مجتمع أسس,
         مؤسس هاكنتوش بالعربي
       avatar:
-        local: false
-        src: /profile.webp
+        local: true
+        src: images/profile.webp
 
     menu:
       main:
@@ -234,8 +234,8 @@ params:
   defaultImage:
     opengraph:
       enabled: true
-      local: false
-      src: /preview.jpeg
+      local: true
+      src: images/preview.jpeg
 
   colorScheme:
     # Display toggle
