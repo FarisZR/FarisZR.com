@@ -9,11 +9,17 @@ tags:
   - تثبيت دوكر
   - تثبيت دوكر لينكس
   - مجتمع أسس
-lastmod: 2022-08-31
+lastmod: 2022-09-01
 image: docker-thumbnail.jpg
 type: default
 slug: install-docker-compose
 summary: شرح كيفية تثبيت Docker و Docker-compose على توزيعات لينكس الشهيرة
+keywords:
+  - docker
+  - docker compose
+  - Docker-compose
+  - دوكر
+  - مجتمع أسس
 ---
 
 **هذا الموضوع كتب على [مجتمع أسس](https://discourse.aosus.org/t/topic/2223)**
