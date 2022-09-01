@@ -8,22 +8,22 @@ links:
   
   - title: Privacy-OCI
     description: مستودع يقوم ببناء صور دوكر تلقائيا, عبر التحقق من التغييرات في المستودع الاصلي, ثم بناء الصور اذا كانت هناك تغييرات, حاليا يبني صور لواجهه Bibliogram و scribe, ومرفوعة على Docker Hub
-    image: https://gitlab.com/assets/twitter_card-570ddb06edf56a2312253c5872489847a0f385112ddbcd71ccfa1570febab5d2.jpg
+    image: gitlab.webp
     website: https://gitlab.com/FarisZR/Privacy-OCI
 
   - title: local-bmc
     description: نسخة معدلة من سكربت موقع Buy me a coffe, لا تقوم بتحميل اي ملفات من مصادر خارجية, حتى يتفاعل المستخدم مع زر التبرع
-    image: https://gitlab.com/assets/twitter_card-570ddb06edf56a2312253c5872489847a0f385112ddbcd71ccfa1570febab5d2.jpg
+    image: gitlab.webp
     website: https://gitlab.com/FarisZR/local-bmc
     
   - title: hugo-stack-no-cdn
     description: حزمة تعطل تحميل ملفات خارجية من CDN لقالب Hugo-stack
-    image: https://github.com/fluidicon.png
+    image: github.webp
     website: https://github.com/FarisZR/Hugo-stack-no-cdn
 
   - title: ARhackintosh/ARtutorial
     description: اكبر شرح عربي لتثبيت الهاكنتوش, الان مع دعم أوبن كور و macOS Big Sur
-    image: https://github.com/fluidicon.png
+    image: github.webp
     website: https://github.com/ARhackintosh/ARtutorial
 ---
 

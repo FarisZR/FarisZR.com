@@ -8,22 +8,22 @@ links:
   
   - title: Privacy-OCI
     description: Automatically built docker images for Scribe and Bibliogram, using GitLab CI, and script to fetch the latest commit hash and trigger a built if there is a new one
-    image: https://gitlab.com/assets/twitter_card-570ddb06edf56a2312253c5872489847a0f385112ddbcd71ccfa1570febab5d2.jpg
+    image: gitlab.webp
     website: https://gitlab.com/FarisZR/Privacy-OCI
 
   - title: local-bmc
     description: localized version of buy me a coffee script, to prohibit any external connections when there is no interactions by the user. 
-    image: https://gitlab.com/assets/twitter_card-570ddb06edf56a2312253c5872489847a0f385112ddbcd71ccfa1570febab5d2.jpg
+    image: gitlab.webp
     website: https://gitlab.com/FarisZR/local-bmc
 
   - title: hugo-stack-no-cdn
     description: Overrides to disable all CDN and external font loading for Hugo-theme-stack
-    image: https://github.com/fluidicon.png
+    image: github.webp
     website: https://github.com/FarisZR/Hugo-stack-no-cdn
 
   - title: ARhackintosh/ARtutorial
     description: The biggest arabic guide for hackintosh, now with support for opencore and macOS big sur
-    image: https://github.com/fluidicon.png
+    image: github.webp
     website: https://github.com/ARhackintosh/ARtutorial
 ---
 
