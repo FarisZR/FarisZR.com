@@ -34,7 +34,7 @@ Deploy:
         - ssh-add <(echo "$SSH_KEY")
         - echo "$SSH_KEY" > ~/.ssh/id_key
     script:
-        - rsync -avuz -e "ssh -p ${SSH_PORT} -i ~/.ssh/id_key" public/ $SSH_SERVER
+        - rsync -avuzh -e "ssh -p ${SSH_PORT} -i ~/.ssh/id_key" public/ $SSH_SERVER --delete
     environment:
         name: Main website
         url: https://fariszr.com
