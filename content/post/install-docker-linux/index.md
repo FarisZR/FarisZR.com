@@ -11,7 +11,6 @@ tags:
   - مجتمع أسس
 lastmod: 2022-09-01
 image: docker-thumbnail.jpg
-type: default
 slug: install-docker-compose
 summary: شرح كيفية تثبيت Docker و Docker-compose على توزيعات لينكس الشهيرة
 keywords:
