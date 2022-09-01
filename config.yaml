@@ -182,7 +182,7 @@ languages:
             icon: codeberg
 
 permalinks:
-  post: /p/:slug/
+  post: /:slug/
   page: /:slug/
 
 params:
