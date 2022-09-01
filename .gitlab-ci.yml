@@ -15,7 +15,7 @@ hugo_build:
     image: klakegg/hugo:ext-alpine-ci
     stage: build
     script:
-        - hugo --minify -v
+        - hugo --minify -v --gc
     artifacts:
         paths:
             - public
@@ -34,7 +34,7 @@ Deploy:
         - ssh-add <(echo "$SSH_KEY")
         - echo "$SSH_KEY" > ~/.ssh/id_key
     script:
-        - rsync -avuz -e "ssh -p ${SSH_PORT} -i ~/.ssh/id_key" public/* $SSH_SERVER
+        - rsync -avuz -e "ssh -p ${SSH_PORT} -i ~/.ssh/id_key" public/ $SSH_SERVER
     environment:
         name: Main website
         url: https://fariszr.com
