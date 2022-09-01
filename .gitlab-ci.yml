@@ -15,7 +15,7 @@ hugo_build:
     image: klakegg/hugo:ext-alpine-ci
     stage: build
     script:
-        - hugo
+        - hugo --minify -v
     artifacts:
         paths:
             - public
