@@ -1,5 +1,5 @@
 ---
-title: how to share your screen in Chromium browser on Wayland
+title: how to fix screen sharing in Chromium browsers on Wayland
 keywords:
   - Linux
   - wayland

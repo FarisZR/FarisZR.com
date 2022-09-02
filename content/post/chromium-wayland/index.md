@@ -1,5 +1,5 @@
 ---
-title: تشغيل مشاركة الشاشة على متصفحات Chromium مع wayland
+title: حل مشكلة مشاركة الشاشة على متصفحات Chromium مع wayland
 keywords:
   - Linux
   - wayland
