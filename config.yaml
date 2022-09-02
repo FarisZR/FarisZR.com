@@ -115,8 +115,8 @@ languages:
         Founder of ARhackintosh.
         If you want change, be the first one to do it.
       avatar:
-        local: false
-        src: /profile.webp
+        local: true
+        src: images/profile.webp
     weight: 2
 
     menu:
