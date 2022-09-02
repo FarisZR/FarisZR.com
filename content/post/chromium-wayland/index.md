@@ -12,7 +12,7 @@ tags:
   - Linux
   - Wayland
   - Brave
-date: 2021-12-09
+date: 2022-09-02
 image: image.jpg
 summary: كيفية تشغيل مشاركة الشاشة على متصفحات كروميم بستخدام Pipewire
 ---
