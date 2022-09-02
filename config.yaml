@@ -22,9 +22,11 @@ languages:
     # title: مدونتي
     # contentDir: content/arabic
     weight: 1
+    description: مدونتي, انشر فيها مواضيع عن التقنية والبنية التحتية, بالاضافة الى ارائي الشخصية. 
     sidebar:
       subtitle: المدير التقني في مجتمع أسس,
-        مؤسس هاكنتوش بالعربي
+        مؤسس هاكنتوش بالعربي.
+        اذا كنت تريد التغيير، فكن اول مساهم فيه.
       avatar:
         local: true
         src: images/profile.webp
@@ -107,9 +109,11 @@ languages:
 
   en:
     languageName: English
+    description: Personal blog!, I write about tech, infrastructure and the occasional personal opinion.
     sidebar:
       subtitle: Tecnical Director at Aosus,
         Founder of ARhackintosh.
+        If you want change, be the first one to do it.
       avatar:
         local: false
         src: /profile.webp
