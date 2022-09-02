@@ -97,6 +97,13 @@ languages:
           params:
             icon: codeberg
 
+        - identifier: RSS
+          name: RSS
+          url: https://fariszr.com/index.xml
+          weight: 5
+          params:
+            icon: rss
+
     related:
       includeNewer: true
       threshold: 60
@@ -184,6 +191,14 @@ languages:
           weight: 4
           params:
             icon: codeberg
+
+        - identifier: RSS
+          name: RSS
+          url: https://fariszr.com/en/index.xml
+          weight: 5
+          params:
+            icon: rss
+
 
 permalinks:
   post: /:slug/
