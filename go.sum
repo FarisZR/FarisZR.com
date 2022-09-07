@@ -1,10 +1,4 @@
-github.com/CaiJimmy/hugo-theme-stack/v3 v3.10.0 h1:M0LF4RPtDT/2oOzMOkq4+fwXmuMeNYtF7nF/M1xmjeY=
-github.com/CaiJimmy/hugo-theme-stack/v3 v3.10.0/go.mod h1:IPmCXiIxlFSLFYS0tOmYP6ySLviyeNVSabyvSuaxD+I=
-github.com/CaiJimmy/hugo-theme-stack/v3 v3.12.0 h1:CKcppy8b4RleKtkYDLaxMyWaQXpNm28u033HO75Dhyw=
-github.com/CaiJimmy/hugo-theme-stack/v3 v3.12.0/go.mod h1:IPmCXiIxlFSLFYS0tOmYP6ySLviyeNVSabyvSuaxD+I=
 github.com/CaiJimmy/hugo-theme-stack/v3 v3.13.0 h1:59xw34lWmzKrBOxarNBCEN5nR2EA0A4CDCN3yc1vFP0=
 github.com/CaiJimmy/hugo-theme-stack/v3 v3.13.0/go.mod h1:IPmCXiIxlFSLFYS0tOmYP6ySLviyeNVSabyvSuaxD+I=
-github.com/FarisZR/Hugo-stack-no-cdn v0.0.0-20220705163759-d3aa24fd04c4 h1:t32LA+t5+g4iQumVkqUrGBk2sUcWrxUI3VeO53fvxk0=
-github.com/FarisZR/Hugo-stack-no-cdn v0.0.0-20220705163759-d3aa24fd04c4/go.mod h1:wXjh6I2Y/sbUZUMHqNeOmjV3fy/QZCAgqsG0ssEU1xo=
 github.com/FarisZR/Hugo-stack-no-cdn v0.0.0-20220705212034-e06f9c087562 h1:vHnKT1KO7ZnN2N/Kqq9eoa5tEPLm5JvWxADwmD/cgWI=
 github.com/FarisZR/Hugo-stack-no-cdn v0.0.0-20220705212034-e06f9c087562/go.mod h1:wXjh6I2Y/sbUZUMHqNeOmjV3fy/QZCAgqsG0ssEU1xo=

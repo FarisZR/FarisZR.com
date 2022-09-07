@@ -1,4 +1,4 @@
-module github.com/fariszr/fariszr.com
+module gitlab.com/FarisZR/fariszr.com
 
 go 1.18
 
