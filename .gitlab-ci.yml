@@ -15,8 +15,16 @@ stages:
 hugo_build:
     image: klakegg/hugo:ext-alpine-ci
     stage: build
+    before_script:
+        - apk add gzip brotli
     script:
         - hugo --minify -v --gc
+        - | 
+            find public -type f \( -name '*.html' -o -name '*.js' -o -name '*.css' -o -name '*.xml' -o -name '*.svg' \) \
+            -exec /bin/sh -c 'brotli -q 11 -o "$1.br" "$1"' /bin/sh {} \;
+        - |
+            find public -type f \( -name '*.html' -o -name '*.js' -o -name '*.css' -o -name '*.xml' -o -name '*.svg' \) \
+            -exec /bin/sh -c 'gzip -v -f -9 -c "$1" > "$1.gz"' /bin/sh {} \;
     artifacts:
         paths:
             - public
