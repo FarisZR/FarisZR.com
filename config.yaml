@@ -295,6 +295,16 @@ related:
     - name: categories
       weight: 200
 
+frontmatter:
+  dateFormat:
+  - date
+  - lastmod
+  - :git
+  lastmod:
+  - :git
+  - lastmod
+  - date
+
 markup:
   goldmark:
     renderer:
