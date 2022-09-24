@@ -32,9 +32,14 @@ links:
 
 [![](https://aosus.org/wp-content/uploads/2022/07/aosus-preview.jpg)](https://aosus.org)
 
-I worked on a new start for Aosus, merging with a telegram chat group with more than 3000 members.
+I Joined Aosus in 2021 to work on a new re-launch for the project, first by merging it with another Linux telegram chat group that had more than 3000 members.
 
-I redesigned the community designed, and worked on official website, and blog, as I am the Technical Director, I also worked on the Technical infrastructure, using Docker and internal container networks.
+Then I worked on redesigned the community page, and launching the new official website and blog, of course all of this came with a complete overhaul of Aosus's Technical infrastructure, now fully dockerized.
+
+I also launched [Aosus services](https://aosus.org/services), 
+where aosus hosts Privacy focused interfaces/proxies for popular websites, like YouTube, Twitter, Reddit etc. without tracking or Ads.
+
+I also manage [The Aosus Writing Contest](https://aosus.org/writing-contest) [summary in English](https://opencollective.com/aosus/projects/aosus-writing-contest), the first Contest of its kind in the Arabic world to support writers that write about FOSS in Arabic.
 
 I also manage [The Aosus Writing Contest](https://aosus.org/writing-contest), the first Contest of its kind in the Arabic world to support writers that write about FOSS in Arabic.
 
