@@ -28,7 +28,7 @@ links:
 ---
 
 ## The Aosus Community
-[aosus](https://aosus.org) is the biggest Arabic community for FOSS, We aim to popularize the culture of free and open source software in the Arab world, enrich it and spread the idea of contributing to it
+[Aosus](https://aosus.org) is the biggest Arabic community for FOSS, we want to spread Free and open source software in the Arab world, and spread the culture around contributing to FOSS.
 
 [![](https://aosus.org/wp-content/uploads/2022/07/aosus-preview.jpg)](https://aosus.org)
 
