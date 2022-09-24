@@ -41,7 +41,7 @@ where aosus hosts Privacy focused interfaces/proxies for popular websites, like 
 
 I also manage [The Aosus Writing Contest](https://aosus.org/writing-contest) [summary in English](https://opencollective.com/aosus/projects/aosus-writing-contest), the first Contest of its kind in the Arabic world to support writers that write about FOSS in Arabic.
 
-I also manage [The Aosus Writing Contest](https://aosus.org/writing-contest), the first Contest of its kind in the Arabic world to support writers that write about FOSS in Arabic.
+You can support Aosus by donating on [OpenCollective](https://opencollective.com/aosus) or [Github Sponsors](https://github.com/sponsors/aosus), or by contributing to Aosus's [projects](https://github.com/aosus)
 
 ### my Achievements in Aosus
 
