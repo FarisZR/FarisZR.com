@@ -47,12 +47,12 @@ You can support Aosus by donating on [OpenCollective](https://opencollective.com
 
 (unfortunately most links are only in Arabic, it's an Arabic focused project after all)
 
-- [create a page about the Community ant its projects](https://aosus.org/en) (partially translated)
+- [Create a page about the Community ant its projects](https://aosus.org/en) (partially translated)
 - [Creating a Matrix server for aosus](https://aosus.org/931)
 - Redesign the Discourse forum, you can see the old designs on [the Internet Archive](https://web.archive.org/web/*/aosus.org)
 - launching the [Aosus writing contest](https://aosus.org/924), the first Contest of its kind in the Arabic world.
 - [Aosus joining Open Collective](https://aosus.org/1359), Aosus was one of the first Arabic to join the platform, to have financial transparency and independence.
-- launch [Aosus services](https://aosus.org/services), to protect user's digital privacy
+- Launch [Aosus services](https://aosus.org/services), to protect user's digital privacy
 - create a plan for the upcoming project, [Torjoman](https://github.com/aosus/torjoman), a new way to crowdsource translations directly from the users favorite apps. (English description available)
 - Add Aosus [to new social media platforms](https://twitter.com/Aosusorg/status/1556269856546250753)
 
