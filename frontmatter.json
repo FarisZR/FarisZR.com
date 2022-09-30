@@ -69,8 +69,15 @@
             "دوكر",
             "مجتمع أسس"
           ]
+        },
+        {
+          "title": "draft",
+          "name": "draft",
+          "type": "datetime"
         }
       ]
     }
-  ]
+  ],
+  "frontMatter.framework.startCommand": "distrobox-enter --name debian-latest -- hugo serve --minify --disableFastRender",
+  "frontMatter.preview.host": "http://localhost:1313"
 }

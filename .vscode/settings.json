@@ -1,6 +1,4 @@
 {
-    "frontMatter.preview.host": "http://localhost:1313",
-    "frontMatter.framework.startCommand": "distrobox-enter --name debian-latest -- hugo serve --minify --disableFastRender",
     "[markdown]": {
         "editor.fontSize": 14,
         "editor.lineHeight": 26,
