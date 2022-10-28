@@ -1,7 +1,7 @@
 ---
 title: تثبيت Cloudflared على Docker بدون الحاجه للوحة التحكم
 categories:
-  - guides
+  - شروحات
 slug: cloudflared-docker-setup
 tags:
   - Cloudflare
