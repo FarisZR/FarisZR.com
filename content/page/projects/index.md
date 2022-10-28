@@ -59,7 +59,7 @@ links:
 
 **مشروع هاكنتوش بالعربي يحتاج مساهمين جدد, اذا مهتم بالهاكنتوش, اظهر اهتمامك [هنا](https://github.com/ARhackintosh/ARtutorial/issues/32)**
 
-[![](https://xn--mgbg4a8cpdl.com/wp-content/uploads/2021/07/link-preview.jpg)](https://هاكنتوش.com)
+[![](https://xn--mgbg4a8cpdl.com/wp-content/uploads/2022/09/link-preview.jpeg)](https://هاكنتوش.com)
 
 أسست مجتمع هاكنتوش بالعربي في بداية عام 2020, وهو اول مجتمع عربي متخصص بالهاكنتوش, اهدف به لإنشاء وجهه واضحه لكل شيء حول الهاكنتوش بالعربية.
 

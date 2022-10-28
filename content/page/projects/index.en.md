@@ -62,7 +62,7 @@ You can support Aosus by donating on [OpenCollective](https://opencollective.com
 
 **If you know Arabic, ARhackintosh needs new maintainers, if you're interested more details [here](https://هاكنتوش.com/هاكنتوش-بالعربي-يبحث-عن-مساهمين-جدد/)**
 
-[![](https://xn--mgbg4a8cpdl.com/wp-content/uploads/2021/07/link-preview.jpg)](https://هاكنتوش.com)
+[![](https://xn--mgbg4a8cpdl.com/wp-content/uploads/2022/09/link-preview.jpeg)](https://هاكنتوش.com)
 (for non Arabs out there, yes that's an actual word mark!, and people can read it!)
 
 I started ARhackintosh in 2020, to create a dedicated place for All things Hackintosh in Arabic.
