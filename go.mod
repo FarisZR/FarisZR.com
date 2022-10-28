@@ -3,6 +3,6 @@ module gitlab.com/FarisZR/fariszr.com
 go 1.18
 
 require (
-	github.com/CaiJimmy/hugo-theme-stack/v3 v3.13.0 // indirect
+	github.com/CaiJimmy/hugo-theme-stack/v3 v3.15.0 // indirect
 	github.com/FarisZR/Hugo-stack-no-cdn v0.0.0-20220705212034-e06f9c087562 // indirect
 )
