@@ -15,12 +15,13 @@ tags:
 date: 2022-10-28
 summary: Setting up Cloudflared in docker to tunnel to a container without expoing the server.
 image: thumbnail-en.jpeg
+lastmod: 2022-11-07
 ---
 
-When I wanted to set up Cloudflared, but I couldn't find anything about setting it up in docker, especially without the Zero Trust dashboard (because it kept refusing my credit card for some reason).
+I wanted to set up Cloudflared, but I couldn't find anything about setting it up in docker, especially without the Zero Trust dashboard (because it kept refusing my credit card for some reason).
 So here it is!
 
-I am aiming to set up one tunnel per container, which I think is better and easier to manage then multiple tunnels in one Cloudflared instance.
+I am aiming to set up one tunnel per container, which I think is better and easier to manage than multiple tunnels in one Cloudflared instance.
 
 ## docker-compose.yaml
 ```
@@ -38,28 +39,28 @@ services:
         command: tunnel run $(TUNNEL_NAME)
 ```
 
-## linking Cloudflared with your domain
+## Linking Cloudflared with your domain
 
 ### Create `cloudflared` dir
-firstly you need to create the `./cloudflared` directory before running any commands because on container start It's going to be created as root and Cloudflared runs as the distroless `nonroot`(id 65532) user so you will just end up with permission problems every time.
+firstly you need to create the `./cloudflared` directory before running any docker commands, because on container start up It's going to create the directory as root, and Cloudflared runs as the distroless `nonroot`(id 65532) user, so you will just end up with permission problems.
 
 ```
 mkdir ./cloudflared
 ```
 
-#### rootful
+#### Rootful
 ```
 sudo chown -R 65532:65532 ./cloudflared
 ```
 
-#### rootless
+#### Rootless
 this is assuming your subid and subgid ranges are `100000:65536`
 ```
 sudo chown -R 165531:165531 ./cloudflared
 ```
 
 #### User name spaces remapping
-for some reason, docker in UserNS mode uses different IDs, even when using the same subuid/subgid.
+for some reason, docker in UserNS mode uses different IDs, even though I am using the same subuid/subgid.
 ```
 sudo chown -R 165532:165532 ./cloudflared
 ```
@@ -69,8 +70,7 @@ sudo chown -R 165532:165532 ./cloudflared
 ```
 docker run -v $PWD/cloudflared:/home/nonroot/.cloudflared cloudflare/cloudflared login
 ```
-Open the link in your browser and select which domain you would like to authorize it for.
-Then it would generate the origin cert.
+Open the link in your browser and select which domain you would like to use, and then it will generate the origin certificate.
 
 ## Create a new cloudflared tunnel
 
@@ -87,7 +87,7 @@ Copy the tunnels ID because you are going to need it when configuring Cloudflare
 
 create a `config.yml` file inside the `./cloudflared` directory
 
-This is a basic configuration for a WordPress site inside the same docker network running at port 80.
+This is a basic configuration for a WordPress site inside the same docker network as Cloudflared, running on port 80.
 
 ```
 tunnel: ${TUNNEL_ID}
@@ -108,7 +108,7 @@ You could further customize the configuration to your liking.
 But this would be enough for most setups.
 
 ## Start it up!
-Make sure cloudflared is running in the same network as your other container if you are using hostnames, and it should just work!
+Make sure cloudflared is running in the same network as your other container if you are using DNS hostnames, and it should just work!
 
 ```
 docker compose up -d
@@ -116,9 +116,9 @@ docker compose up -d
 
 ## DNS Records
 
-Add a `CNAME` record to your domains that will be using the tunnel pointing to `${TUNNEL_ID}.cfargotunnel.com`, make sure to enable Cloudflare proxy status (the cloud needs to be orange).
+Add a `CNAME` record to your domains pointing to `${TUNNEL_ID}.cfargotunnel.com`, and make sure to enable Cloudflares proxy (the cloud needs to be orange).
 
-## rootless/UserNs note
+## Rootless/UserNs note
 
 if you see this error
 ```
@@ -126,7 +126,7 @@ WRN The user running cloudflared process has a GID (group ID) that is not within
 WRN ICMP proxy feature is disabled error="cannot create ICMPv4 proxy: Group ID 65532 is not between ping group 65534 to 65534 nor ICMPv6 proxy: socket: permission denied"
 
 ```
-This has no effect currently, as Cloudflared [still doesn't support](https://github.com/cloudflare/cloudflared/issues/726) ICMP over QUIC anyway.
+Currently, This has no effect, as Cloudflared [still doesn't support](https://github.com/cloudflare/cloudflared/issues/726) ICMP over QUIC anyway.
 I tried fixing it by setting `net.ipv4.ping_group_range = 0 2147483647`, but it still didn't work, so just ignore it for now.
 
 If you have a solution, write it in the comments!
