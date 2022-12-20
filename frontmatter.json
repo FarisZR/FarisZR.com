@@ -78,6 +78,6 @@
       ]
     }
   ],
-  "frontMatter.framework.startCommand": "distrobox-enter --name debian-latest -- hugo serve --minify --disableFastRender",
+  "frontMatter.framework.startCommand": "docker run --pull always --rm  -it -p 1313:1313 -v $PWD:/src klakegg/hugo:ext-alpine-ci hugo serve --minify --disableFastRender",
   "frontMatter.preview.host": "http://localhost:1313"
 }

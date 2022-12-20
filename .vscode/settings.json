@@ -1,5 +1,4 @@
 {
     "[markdown]": {
-    },
-    "frontMatter.framework.startCommand": "docker run --pull always --rm  -it -p 1313:1313 -v $PWD:/src klakegg/hugo:ext-alpine-ci hugo serve --minify --disableFastRender"
+    }
 }
