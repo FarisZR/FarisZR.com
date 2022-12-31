@@ -148,6 +148,8 @@ docker compose up -d
 والآن لديك مجلد SMB يمكن اكتشافه تقريبا من كل الأجهزة داخل الشبكة!
 
 
-## المصدر
+## المصادر
 
 https://github.com/crazy-max/docker-samba/issues/1
+
+https://github.com/crazy-max/docker-samba
