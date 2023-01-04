@@ -29,7 +29,10 @@ languages:
       avatar:
         local: true
         src: images/profile.webp
-
+    author:
+      name: FarisZR
+    copyright: كافة الحقوق محفوظة
+    languageCode: ar-sa
     menu:
       main:
         - identifier: home
@@ -124,7 +127,10 @@ languages:
         local: true
         src: images/profile.webp
     weight: 2
-
+    author:
+      name: FarisZR
+    copyright: All rights reserved
+    languageCode: en-us
     menu:
       main:
         - identifier: home
