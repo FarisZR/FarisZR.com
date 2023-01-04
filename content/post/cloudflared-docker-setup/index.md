@@ -16,7 +16,7 @@ tags:
 date: 2022-10-28
 summary: تثبيت جسر Cloudflared لوصل الخادم بخوادم Cloudflared دون كشف الخادم نفسه, على
   Docker دون جذر او مع جذر.
-image: thumbnail.jpeg
+image: thumbnail.jpg
 ---
 
 عندما بحثت عن طريقه تثبيت Cloudflared على Docker, خاصة بدون استخادم لوحه تحكم Zero Trust(بسبب مشاكل الدفع) لم اجد شيء.
