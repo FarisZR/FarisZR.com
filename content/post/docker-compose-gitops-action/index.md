@@ -28,7 +28,7 @@ keywords:
 لكن عندما نبحث عن مصطلح Gitops نجد اغلب المصادر تستخدم عن Kubernetes.
 لكن ماذا عن Compose؟ الذي مازال ابسط بمراحل ويكفي في العديد من الاستخدامات؟
 
-لذلك قمت بعمل مشروع [docker-compose-gitops-action](https://github.com/aosus/docker-compose-gitops-action),  وهو Github Action يقوم بتشغيل الحاويات على الخادم عن بعد, ويسمح لك بإدارتها من داخل مستودع Git على Github.
+لذلك قمت بعمل مشروع [docker-compose-gitops-action](https://github.com/FarisZR/docker-compose-gitops-action),  وهو Github Action يقوم بتشغيل الحاويات على الخادم عن بعد, ويسمح لك بإدارتها من داخل مستودع Git على Github.
 وهو يدعم استخدامات متقدمه, مثل Swarm أو رفع ملفات مرافقه للحاويه. وحتى يمكن استخدامه على خادم منزلي دون فتح منافذ بواسطة [Tailscale SSH](https://tailscale.com/blog/tailscale-ssh/).
 
 **هل Tailscale مفتوح المصدر؟**

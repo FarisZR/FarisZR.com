@@ -25,7 +25,7 @@ keywords:
   
 So you have heard about how good GitOps is, and how much better it is than having to manage your containers by hand. But almost every time GitOps is mentioned, it means using K8S. But what about the rest of us mere mortals who are still using Docker Compose?
 
-That's why I started working on [docker-compose-gitops-action](https://github.com/aosus/docker-compose-gitops-action), a GitHub action to do GitOps with Docker compose!, it should cover most edge cases for Docker compose CI deployments, swarm, uploading sidecar files, post-upload shell commands, non-exposed servers like Homelabs and more.
+That's why I started working on [docker-compose-gitops-action](https://github.com/FarisZR/docker-compose-gitops-action), a GitHub action to do GitOps with Docker compose!, it should cover most edge cases for Docker compose CI deployments, swarm, uploading sidecar files, post-upload shell commands, non-exposed servers like Homelabs and more.
 
 ## Server side setup
 
