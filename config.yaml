@@ -279,7 +279,7 @@ params:
       provider: giscus
 
       giscus:
-        repo: FarisZR/comments
+        repo: FarisZR/FarisZR.com
         repoID: R_kgDOHyxZfA
         category: Comments
         categoryID: DIC_kwDOHyxZfM4CQtrc
