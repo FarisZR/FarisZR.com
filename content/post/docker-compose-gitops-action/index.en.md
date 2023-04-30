@@ -1,26 +1,27 @@
 ---
 title: Docker compose Gitops using Github Actions
-categories: 
-    - guides
+categories:
+  - guides
 tags:
-    - linux
-    - smb
-    - docker
-    - docker compose
-    - linux containers
-    - docker container
-    - cloud computing
+  - linux
+  - smb
+  - docker
+  - docker compose
+  - linux containers
+  - docker container
+  - cloud computing
 date: 2023-03-09
 image: thumbnail.jpg
 summary: Gitops with the simplicity of Docker-compose using Github actions
 slug: docker-compose-gitops-github
-keywords: 
-    - github-actions
-    - github 
-    - docker
-    - gitops
-    - docker gitops
-    - gitops without K8S
+keywords:
+  - github-actions
+  - github
+  - docker
+  - gitops
+  - docker gitops
+  - gitops without K8S
+lastmod: 2023-05-01
 ---
   
 So you have heard about how good GitOps is, and how much better it is than having to manage your containers by hand. But almost every time GitOps is mentioned, it means using K8S. But what about the rest of us mere mortals who are still using Docker Compose?
@@ -104,6 +105,24 @@ The `project` directory will be uploaded to the server. This is useful if a cont
 It will also upload the docker-compose file since it is included in the directory.
 
 If you need to change file permissions after uploading, you can use `post_upload_command` to `chmod` or `chown` files, although in most cases you will need to use sudo.
+
+### managing secrets in compose files
+But what about secrets, you don't want to upload your secret plain text into the repo right?, well you can just use GitHub secrets with environment variables!
+
+Don't set a value for the variable in the compose file:
+```
+environment: 
+  - VAR
+```
+set the variable in GitHub actions
+```
+- name: Start Deployment
+  uses: FarisZR/docker-compose-gitops-action@v1
+  env:
+    MARIADB_PASSWORD: ${{ secrets.gnulinuxsa_wordpress_mariadb_password }}
+  with:
+    remote_docker_host: ${{ secrets.server_address }}
+```
 
 That should do the trick, just create an action for each of your projects, and you should have your very own Compose-powered Gitops workflow!
 

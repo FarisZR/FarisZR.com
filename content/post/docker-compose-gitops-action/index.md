@@ -21,6 +21,7 @@ keywords:
     - gitops
     - docker gitops
     - gitops without K8S
+lastmod: 2023-05-01
 ---
 
 السلام عليكم ورحمة الله وبركاته.
@@ -109,5 +110,28 @@ jobs:
 ```
 وعين القيم في صفحه القيم السرية في Github.
 اذا تحتاج لإصلاح الصلاحيات الخاصة بالملفات قبل تشغيل الحاوية, بإمكانك استخدام `post_upload_command`, لكن تغيير صلاحيات الملفات معظم الوقت يحتاج ل`sudo`.
+
+### أدارة كلمات المرور والقيم السرية في ملفات compose
+
+عندما يحتوي مِلَفّ docker-compose.yml على قيم سرية مثل كلمة مرور قاعدة بيانات, يجب عدم رفعها لمستودع git لعدم كشفها.
+الحل بهذه الحالة استخدام متغيرات النظام, و اخذ قيمها من خزينه اسرار github.
+
+لا تحدد قيمة للمتغير داخل مِلَفّ compose
+```yaml
+
+environment:
+- VAR
+
+```
+
+حدد القيمة في github actions
+```yaml
+- name: Start Deployment
+  uses: FarisZR/docker-compose-gitops-action@v1
+  env:
+    MARIADB_PASSWORD: ${{ secrets.gnulinuxsa_wordpress_mariadb_password }}
+  with:
+    remote_docker_host: ${{ secrets.server_address }}
+```
 
 والآن من المفترض ان يصبح كل شيء جاهز!, اصبح لديك Gitops مع Docker-compose!
