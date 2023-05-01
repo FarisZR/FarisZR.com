@@ -4,10 +4,11 @@ keywords:
   - Linux
   - Fedora
 categories:
-  - Linux
+  - شروحات
 date: 2021-06-22
 image: dnf.png
 slug: speedup-dnf
+canonicalurl: https://discourse.aosus.org/t/topic/1976
 tags:
   - fedora
   - linux

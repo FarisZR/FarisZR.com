@@ -5,7 +5,7 @@ keywords:
   - wayland
   - chromium
 categories:
-  - Linux
+  - quick-snippets
 tags:
   - Chromium
   - Gnome

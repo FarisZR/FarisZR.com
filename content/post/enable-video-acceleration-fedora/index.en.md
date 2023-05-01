@@ -1,7 +1,7 @@
 ---
 title: Enable Video hardware acceleration on Fedora 36+/RHEL/CentOS
 categories:
-  - Linux
+  - guides
 keywords:
   - Video Acceleration
   - Fedora drivers

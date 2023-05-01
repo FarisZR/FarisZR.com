@@ -1,6 +1,6 @@
 ---
 categories:
-  - docker
+  - شروحات
 title: كيفية تثبيت Docker و Docker-compose
 date: 2021-12-17
 tags:
