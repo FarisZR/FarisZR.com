@@ -14,6 +14,7 @@ date: 2023-03-09
 image: thumbnail.jpg
 summary: عمل Docker compose Gitops بستخدام Github actions
 slug: docker-compose-gitops-github
+canonicalurl: https://discourse.aosus.org/t/topic/2762
 keywords: 
     - github-actions
     - github 
@@ -23,6 +24,8 @@ keywords:
     - gitops without K8S
 lastmod: 2023-05-01
 ---
+
+**هذا المقال متوفر ايضا على مجتمع أسس [هنا](https://discourse.aosus.org/t/topic/2762)**
 
 السلام عليكم ورحمة الله وبركاته.
 اغلب المهتمين بالحوسبة السحابية قد سمعو سابقا بمصطلح Gitops, وكيف انه يعدّ نقله نوعية بإدارة الحاويات, بدلا من ادارتها يدويا.
