@@ -8,6 +8,7 @@ tags:
   - Nginx
 date: 2021-10-09
 image: thumbnail.jpeg
+canonicalurl: https://discourse.aosus.org/t/topic/2148
 categories:
   - docker
 keywords:
