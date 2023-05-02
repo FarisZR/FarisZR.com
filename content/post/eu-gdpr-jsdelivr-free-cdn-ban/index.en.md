@@ -40,6 +40,6 @@ What about other use cases like video hosting, which is much more bandwidth inte
 
 Looks like I'll just stick to hosting my blog images on my free VPS (shout out to Oracle Free Tier), and if I really want to improve the speed of my blog, I should just move to a CDN host like Cloudflare pages.
 
-## Credits
+## Sources
 
 [No legitimate interest for using Google Fonts on websites, says German court](https://reddit.com/r/gdpr/comments/sg8sll/no_legitimate_interest_for_using_google_fonts_on/)
