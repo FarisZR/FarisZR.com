@@ -1,0 +1,59 @@
+name: Build and deploy
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    name: build and deploy
+    runs-on: ubuntu-latest
+    environment:
+      name: website
+      url: https://fariszr.com
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Github action cache
+        uses: actions/cache@v2
+        with:
+          path: /tmp/hugo_cache
+          key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-hugomod-
+
+      - name: Build
+        run: hugo --minify -v --gc --baseURL https://fariszr.com --destination fariszr.com
+
+      - name: pre-compress to Brotli
+        run: | 
+            find fariszr.com -type f \( -name '*.html' -o -name '*.js' -o -name '*.css' -o -name '*.xml' -o -name '*.svg' \) \
+            -exec /bin/sh -c 'brotli -q 11 -o "$1.br" "$1"' /bin/sh {} \;
+      
+      - name: pre-compress to gzip
+        run: |
+            find fariszr.com -type f \( -name '*.html' -o -name '*.js' -o -name '*.css' -o -name '*.xml' -o -name '*.svg' \) \
+            -exec /bin/sh -c 'gzip -v -f -9 -c "$1" > "$1.gz"' /bin/sh {} \;
+
+      - name: setup Tailscale
+        uses: tailscale/github-action@main
+        with:
+          authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
+          hostname: Github-actions
+          version: ${{ vars.TAILSCALE_VERSION }}
+      
+      - name: deploy
+        uses: fariszr/tailscale-ssh-deploy@main
+        with:
+          directory: fariszr.com
+          remote_host: ${{ secrets.SERVER }}
+          remote_destination: web
