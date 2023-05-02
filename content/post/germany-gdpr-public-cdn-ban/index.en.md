@@ -39,3 +39,7 @@ In that [LG München ruling on Google fonts](https://rewis.io/urteile/urteil/lhm
 What about other use cases like video hosting, which is much more bandwidth intensive and benefits a lot from CDNs? the answer won't really matter as all your favourite streaming providers will have their own DPAs with their CDN providers, nobody's giving you a free video CDN!
 
 Looks like I'll just stick to hosting my blog images on my free VPS (shout out to Oracle Free Tier), and if I really want to improve the speed of my blog, I should just move to a CDN host like Cloudflare pages.
+
+## Credits
+
+[No legitimate interest for using Google Fonts on websites, says German court](https://reddit.com/r/gdpr/comments/sg8sll/no_legitimate_interest_for_using_google_fonts_on/)
