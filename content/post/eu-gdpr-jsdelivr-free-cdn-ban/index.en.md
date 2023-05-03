@@ -40,6 +40,15 @@ What about other use cases like video hosting, which is much more bandwidth inte
 
 Looks like I'll just stick to hosting my blog images on my free VPS (shout out to Oracle Free Tier), and if I really want to improve the speed of my blog, I should just move to a CDN host like Cloudflare pages.
 
+## EDIT: JSdelivr doesn't seem to agree
+
+JSdelivr hired a Law firm to look into this, they don't seem to agree, but that doesn't invalidate other opinions.
+
+> In conclusion, the ruling that has been so controversial recently does not seem to fully address the factual and technical circumstances of how jsDelivr works, and at this point as a single ruling should not lead to any real concerns about using CDN's services. The arguments for extending to other online services a single ruling strongly emphasizing Google's failure to adequately protect personal data are insufficient and lack substance.
+https://www.jsdelivr.com/blog/how-the-german-courts-ruling-on-google-fonts-affects-jsdelivr-and-why-it-is-safe-to-use/
+
 ## Sources
 
 [No legitimate interest for using Google Fonts on websites, says German court](https://reddit.com/r/gdpr/comments/sg8sll/no_legitimate_interest_for_using_google_fonts_on/)
+
+[Discuss on HN!](https://news.ycombinator.com/item?id=35793009)
