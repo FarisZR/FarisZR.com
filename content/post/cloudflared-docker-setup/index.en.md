@@ -36,7 +36,7 @@ services:
         - TUNNEL_EDGE_IP_VERSION=auto #use IPv4 and IPv6
         volumes:
         - ./cloudflared:/etc/cloudflared
-        command: tunnel run $(TUNNEL_NAME)
+        command: tunnel run YOUR_TUNNEL_NAME
 ```
 
 ## Linking Cloudflared with your domain
@@ -75,13 +75,13 @@ Open the link in your browser and select which domain you would like to use, and
 ## Create a new cloudflared tunnel
 
 ```
-docker run -v $PWD/cloudflared:/etc/cloudflared cloudflare/cloudflared tunnel create ${TUNNEL_NAME}
+docker run -v $PWD/cloudflared:/etc/cloudflared cloudflare/cloudflared tunnel create YOUR_TUNNEL_NAME
 ```
 We switched from `/home/nonroot/.cloudflared` to `/etc/cloudflared` because tunnel files are generated in the `/etc` directory.
 We overrode the default certificate location in the compose file using the `TUNNEL_ORIGIN_CERT` variable.
 
-Now you will find in `./cloudflared` a `cert.pem` file and a `$TUNNEL_ID.json` file.
-Copy the tunnels ID because you are going to need it when configuring Cloudflared and setting up DNS later on.
+Now you will find in `./cloudflared` a `cert.pem` file and a `.json` file, the name of the file is your Tunnel ID.
+Copy the tunnels ID and replace `YOUR_TUNNEL_ID` with it in the following steps.
 
 ## Configuring the tunnel
 
@@ -90,8 +90,8 @@ create a `config.yml` file inside the `./cloudflared` directory
 This is a basic configuration for a WordPress site inside the same docker network as Cloudflared, running on port 80.
 
 ```
-tunnel: ${TUNNEL_ID}
-credentials-file: /etc/cloudflared/${TUNNEL_ID}.json
+tunnel: YOUR_TUNNEL_ID
+credentials-file: /etc/cloudflared/YOUR_TUNNEL_ID.json
 
 ingress:
   - hostname: domain.tld
@@ -116,7 +116,7 @@ docker compose up -d
 
 ## DNS Records
 
-Add a `CNAME` record to your domains pointing to `${TUNNEL_ID}.cfargotunnel.com`, and make sure to enable Cloudflares proxy (the cloud needs to be orange).
+Add a `CNAME` record to your domains pointing to `YOUR_TUNNEL_ID.cfargotunnel.com`, and make sure to enable Cloudflares proxy (the cloud needs to be orange).
 
 ## Rootless/UserNs note
 

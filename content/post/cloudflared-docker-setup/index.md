@@ -37,7 +37,7 @@ services:
         - TUNNEL_EDGE_IP_VERSION=auto #use IPv4 and IPv6
         volumes:
         - ./cloudflared:/etc/cloudflared
-        command: tunnel run $(TUNNEL_NAME)
+        command: tunnel run YOUR_TUNNEL_NAME
 ```
 
 ## وصل Cloudflared بعنوانك
@@ -76,13 +76,13 @@ docker run -v $PWD/cloudflared:/home/nonroot/.cloudflared cloudflare/cloudflared
 ## إنشاء نفق Cloudflared جديد
 
 ```
-docker run -v $PWD/cloudflared:/etc/cloudflared cloudflare/cloudflared tunnel create ${TUNNEL_NAME}
+docker run -v $PWD/cloudflared:/etc/cloudflared cloudflare/cloudflared tunnel create YOUR_TUNNEL_NAME
 ```
 غيرنا من`/home/nonroot/.cloudflared` الى `/etc/cloudflared` لان ملفات النفق موجوده بمجلد `/etc`
 قمنا بتغيير موقع شهادة الOrigin من خلال متغير `TUNNEL_ORIGIN_CERT` في ملف docker-compose.yaml.
 
-الان سيكون في مجلد `./cloudflared` ملف `cert.pem` و ملف `$TUNNEL_ID.json`.
-انسخ معرف النفق(Tunnel ID) لان سنحتاجه لاحقا اثناء اعداد Cloudflared وتجهيز سجلات DNS.
+الان سيكون في مجلد `./cloudflared` ملف `cert.pem` و ملف اسمه هو معرف النفق.json .
+انسخ معرف النفق(Tunnel ID) واستبدل `YOUR_TUNNEL_ID` في كل الخطوات القادمة به
 
 ## اعداد نفق Cloudflared
 
@@ -91,8 +91,8 @@ docker run -v $PWD/cloudflared:/etc/cloudflared cloudflare/cloudflared tunnel cr
 هذه اعدادات بسيط لحاوية WordPress تعمل على منفذ 80 داخل نفس شبكة Docker التي فيها Cloudflared
 
 ```
-tunnel: ${TUNNEL_ID}
-credentials-file: /etc/cloudflared/${TUNNEL_ID}.json
+tunnel: YOUR_TUNNEL_ID
+credentials-file: /etc/cloudflared/YOUR_TUNNEL_ID.json
 
 ingress:
   - hostname: domain.tld
@@ -116,7 +116,7 @@ docker compose up -d
 
 ## سجلات DNS
 
-أضف سجل `CNAME` لكل العناوين التي ستستخدم النفق يوجه ل `${TUNNEL_ID}.cfargotunnel.com`, وتاكد من تشغيل وسيط(proxy) من Cloudflare (السحابه يجب ان تكون برتقالية).
+أضف سجل `CNAME` لكل العناوين التي ستستخدم النفق يوجه ل `YOUR_TUNNEL_ID.cfargotunnel.com`, وتاكد من تشغيل وسيط(proxy) من Cloudflare (السحابه يجب ان تكون برتقالية).
 
 ## ملاحظة على Docker Rootless او UserNS
 
