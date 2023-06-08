@@ -6,15 +6,20 @@ comments: false
 links:
   - title: مشاريع اضافية
   
+  - title: caddy-dns-OCI
+    description: مستودع يقوم ببناء صور دوكر لكل اضافات الDNS لخادم Caddy تلقائيا, عبر التحقق من التغييرات في المستودع الاصلي, ثم بناء الصور اذا كانت هناك تغييرات.
+    image: github.webp
+    website: https://github.com/FarisZR/caddy-dns-OCi
+
   - title: Privacy-OCI
     description: مستودع يقوم ببناء صور دوكر تلقائيا, عبر التحقق من التغييرات في المستودع الاصلي, ثم بناء الصور اذا كانت هناك تغييرات, حاليا يبني صور لواجهه Bibliogram و scribe, ومرفوعة على Docker Hub
-    image: gitlab.webp
-    website: https://gitlab.com/FarisZR/Privacy-OCI
+    image: github.webp
+    website: https://github.com/FarisZR/Privacy-OCI
 
   - title: local-bmc
     description: نسخة معدلة من سكربت موقع Buy me a coffe, لا تقوم بتحميل اي ملفات من مصادر خارجية, حتى يتفاعل المستخدم مع زر التبرع
-    image: gitlab.webp
-    website: https://gitlab.com/FarisZR/local-bmc
+    image: github.webp
+    website: https://github.com/FarisZR/local-bmc
     
   - title: hugo-stack-no-cdn
     description: حزمة تعطل تحميل ملفات خارجية من CDN لقالب Hugo-stack
@@ -39,7 +44,7 @@ links:
 صممت أيضا البنية التقنية التحتية لتقدم خِدْمَات متكاملة باستخدام تقنيات سحابية مثل حاويات OCI(docker) و انظمة وهمية و شبكات داخلية.
 من الخِدْمَات التي أضفتها :منصة Nextcloud للتعاون بين فريق أسس, خادم بريد Postal, وخادم لشبكة Matrix الفدرالية, واجهه Authentik لأداره صلاحيات الفريق للخدمات.
 
-أيضا أقوم بالإشراف على [جائزة أسس للكتابة](https://aosus.org/writing-contest), أول جائزة بالعالم العربي تحفز الكتابة حول البرمجيات الحرة و  المفتوحة.
+أيضا أشرفت على [جائزة أسس للكتابة](https://aosus.org/writing-contest), أول جائزة بالعالم العربي تحفز الكتابة حول البرمجيات الحرة و  المفتوحة.
 
 ### إنجازاتي في مجتمع أسس
 
@@ -51,6 +56,7 @@ links:
 - إنشاء [خِدْمَات مجتمع أسس](https://aosus.org/services), لحماية خصوصية المستخدمين
 - تخطيط لطريقة تَرْجَمَة جديدة, تسهل الترجمه للجميع, عبر مشروع [تُرجمان](https://torjoman.aosus.dev)
 - توفر مجتمع أسس على [منصات تواصل عديدة](https://twitter.com/Aosusorg/status/1556269856546250753)
+- الانضمام لمنصة [Discord](https://aosus.org/1847) مع استخدام جسور Matrix
 
 
 

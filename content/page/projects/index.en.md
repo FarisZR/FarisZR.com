@@ -6,15 +6,20 @@ comments: false
 links:
   - title: More Projects
   
+  - title: caddy-dns-OCI
+    description: Automatically built docker images for almost all caddy dns plugins, using Github actions, and script to fetch the latest commits and releases hash and trigger a built if there is a new one
+    image: github.webp
+    website: https://github.com/FarisZR/caddy-dns-OCI
+
   - title: Privacy-OCI
-    description: Automatically built docker images for Scribe and Bibliogram, using GitLab CI, and script to fetch the latest commit hash and trigger a built if there is a new one
-    image: gitlab.webp
-    website: https://gitlab.com/FarisZR/Privacy-OCI
+    description: Automatically built docker images for Scribe and Bibliogram, using Github actions, and script to fetch the latest commit hash and trigger a built if there is a new one
+    image: github.webp
+    website: https://github.com/FarisZR/Privacy-OCI
 
   - title: local-bmc
     description: localized version of buy me a coffee script, to prohibit any external connections when there is no interactions by the user. 
-    image: gitlab.webp
-    website: https://gitlab.com/FarisZR/local-bmc
+    image: github.webp
+    website: https://github.com/FarisZR/local-bmc
 
   - title: hugo-stack-no-cdn
     description: Overrides to disable all CDN and external font loading for Hugo-theme-stack
@@ -22,7 +27,7 @@ links:
     website: https://github.com/FarisZR/Hugo-stack-no-cdn
 
   - title: ARhackintosh/ARtutorial
-    description: The biggest arabic guide for hackintosh, now with support for opencore and macOS big sur
+    description: The biggest arabic guide for hackintosh, now with support for Opencore and macOS Big Sur
     image: github.webp
     website: https://github.com/ARhackintosh/ARtutorial
 ---
@@ -39,7 +44,7 @@ Then I worked on redesigned the community page, and launching the new official w
 I also launched [Aosus services](https://aosus.org/services), 
 where aosus hosts Privacy focused interfaces/proxies for popular websites, like YouTube, Twitter, Reddit etc. without tracking or Ads.
 
-I also manage [The Aosus Writing Contest](https://aosus.org/writing-contest) [summary in English](https://opencollective.com/aosus/projects/aosus-writing-contest), the first Contest of its kind in the Arabic world to support writers that write about FOSS in Arabic.
+I also managed [The Aosus Writing Contest](https://aosus.org/writing-contest) [summary in English](https://opencollective.com/aosus/projects/aosus-writing-contest), the first Contest of its kind in the Arabic world to support writers that write about FOSS in Arabic.
 
 You can support Aosus by donating on [OpenCollective](https://opencollective.com/aosus) or [Github Sponsors](https://github.com/sponsors/aosus), or by contributing to Aosus's [projects](https://github.com/aosus)
 
@@ -55,6 +60,7 @@ You can support Aosus by donating on [OpenCollective](https://opencollective.com
 - Launch [Aosus services](https://aosus.org/services), to protect user's digital privacy
 - create a plan for the upcoming project, [Torjoman](https://github.com/aosus/torjoman), a new way to crowdsource translations directly from the users favorite apps. (English description available)
 - Add Aosus [to new social media platforms](https://twitter.com/Aosusorg/status/1556269856546250753)
+- Join [Discord](https://aosus.org/1847) using matrix bridges
 
 
 ## ARhackintosh
@@ -63,7 +69,7 @@ You can support Aosus by donating on [OpenCollective](https://opencollective.com
 **If you know Arabic, ARhackintosh needs new maintainers, if you're interested more details [here](https://هاكنتوش.com/هاكنتوش-بالعربي-يبحث-عن-مساهمين-جدد/)**
 
 [![](https://xn--mgbg4a8cpdl.com/wp-content/uploads/2022/09/link-preview.jpeg)](https://هاكنتوش.com)
-(for non Arabs out there, yes that's an actual word mark!, and people can read it!)
+(Yes that's an actual word mark, people can read it)
 
 I started ARhackintosh in 2020, to create a dedicated place for All things Hackintosh in Arabic.
 
