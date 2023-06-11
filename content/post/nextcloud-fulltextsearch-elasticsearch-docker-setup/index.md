@@ -28,8 +28,11 @@ canonicalurl: https://discourse.aosus.org/t/topic/2813
 كيفية تشغيل [البحث النصي الشامل](https://apps.nextcloud.com/apps/fulltextsearch) في Nextcloud, خاصه عند استخدام Docker والبحث باللغة العربية غير واضحه.
 لذلك كتبت هذا الشرح, ليشرح كيفيه تشغيله, مع استخدام Docker, Elasticsearch و Tesseract, ودعم العربية.
 
+**هذا المقال متوفر ايضا على مجتمع أسس [هنا](https://discourse.aosus.org/t/topic/2813)**
+
 ## أضف tesseract لحاوية Nextcloud
-المعتاد عند اضافة اي شيء لحاوية دوكر, ان تقوم بعمل صورة مخصصة, لكن [modzilla99](https://github.com/nextcloud/docker/issues/1414#issuecomment-884711124) و [Schw3pps](https://github.com/nextcloud/docker/issues/1414#issuecomment-1008915705) اكتشفو طريقة لإضافة الحزم دون الحاجة لصورة مخصصه, وهي عبر وضع أمر `command` مخصص للحاوية.
+المعتاد عند اضافة اي شيء لحاوية دوكر, ان تقوم بعمل صورة مخصصة, لكن [modzilla99](https://github.com/nextcloud/docker/issues/1414#issuecomment-884711124) و [Schw3pps](https://github.com/nextcloud/docker/issues/1414#issuecomment-1008915705) اكتشفو طريقة لإضافة الحزم دون الحاجة لصورة مخصصه, وهي عبر وضع أمر 
+`command` مخصص للحاوية.
 
 ### latest/apache صورة
 ```yaml
@@ -108,7 +111,7 @@ volumes:
 الشرح الرسمي فيه قسم مخصص لتشغيل الفهرسة التلقائيه بستخدام Cron:
 https://github.com/nextcloud/fulltextsearch/wiki/Basic-Installation#live-index-service
 
-لكن بما اننا نستخدم صورة دوكر, مع supervisor, [robeatoz](https://github.com/nextcloud/fulltextsearch/issues/671) شرح طريقة اضافة أمر `fulltextsearch:live` لملف [supervisord.conf](https://github.com/nextcloud/docker/blob/master/.examples/dockerfiles/cron/apache/supervisord.conf).
+لكن بما اننا نستخدم صورة دوكر, مع supervisor, شرح [robeatoz](https://github.com/nextcloud/fulltextsearch/issues/671) طريقة  لإضافة أمر `fulltextsearch:live` لملف [supervisord.conf](https://github.com/nextcloud/docker/blob/master/.examples/dockerfiles/cron/apache/supervisord.conf).
 
 ### fulltextsearch.sh
 أنشئ ملف اسمه `fulltextsearch.sh`
