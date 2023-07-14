@@ -1,7 +1,7 @@
 ---
 title: شركة Red Hat توقف نشر مصدر RHEL لغير المشتركين
 categories: 
-    - شروحات
+    - اخبار
 date: 2023-06-21
 image: thumbnail.png
 slug: RHEL-source-code-only-for-subscribers
