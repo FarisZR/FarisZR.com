@@ -17,7 +17,6 @@ tags:
   - نكست كلاود
   - دوكر
 date: 2023-06-08
-image: شرح لطريقه تشغيل البحث النصي لنكست كلاود بستخدام Elastic search على دوكر
 slug: nextcloud-fulltextsearch-elasticsearch-docker-setup
 summary: شرح لكيفية تشغيل Fulltextsearch في Nextcloud عند تشغيله على دوكر, بستخدام منصه بحث Elasticsearch.
 keywords: docker
