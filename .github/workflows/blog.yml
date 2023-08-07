@@ -23,6 +23,14 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
+      - name: setup Tailscale
+        uses: tailscale/github-action@main
+        with:
+          oauth-client-id: ${{ secrets.TAILSCALE_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TAILSCALE_SECRET }}
+          hostname: Github-actions
+          version: ${{ vars.TAILSCALE_VERSION }}
+
       - name: Github action cache
         uses: actions/cache@v2
         with:
@@ -43,14 +51,6 @@ jobs:
         run: |
             find fariszr.com -type f \( -name '*.html' -o -name '*.js' -o -name '*.css' -o -name '*.xml' -o -name '*.svg' \) \
             -exec /bin/sh -c 'gzip -v -f -9 -c "$1" > "$1.gz"' /bin/sh {} \;
-
-      - name: setup Tailscale
-        uses: tailscale/github-action@main
-        with:
-          oauth-client-id: ${{ secrets.TAILSCALE_CLIENT_ID }}
-          oauth-secret: ${{ secrets.TAILSCALE_SECRET }}
-          hostname: Github-actions
-          version: ${{ vars.TAILSCALE_VERSION }}
       
       - name: deploy
         uses: fariszr/tailscale-ssh-deploy@main
