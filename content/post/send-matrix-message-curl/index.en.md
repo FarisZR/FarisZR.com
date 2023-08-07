@@ -1,5 +1,5 @@
 ---
-title: Send matrix message with CURL using an access token
+title: How to send a matrix message using CURL and an access token
 categories: 
     - quick-snippets
 date: 2023-07-23
@@ -28,6 +28,6 @@ curl -XPOST \
   "https://matrix.org/_matrix/client/r0/login"
 ```
 
-## Source
+## Sources
 https://news.ycombinator.com/item?id=19227859
 https://webapps.stackexchange.com/questions/131056/how-to-get-an-access-token-for-element-riot-matrix
