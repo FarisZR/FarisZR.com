@@ -47,7 +47,8 @@ jobs:
       - name: setup Tailscale
         uses: tailscale/github-action@main
         with:
-          authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
+          oauth-client-id: ${{ secrets.TAILSCALE_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TAILSCALE_SECRET }}
           hostname: Github-actions
           version: ${{ vars.TAILSCALE_VERSION }}
       
