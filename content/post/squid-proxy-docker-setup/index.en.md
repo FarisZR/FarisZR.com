@@ -7,10 +7,9 @@ tags:
   - docker
   - ubuntu
   - socks5
-date: 2023-07-18
+date: 2023-08-29
 image: thumbnail.jpeg
 slug: squid-proxy-docker-setup
-draft: true
 ---
 
 I use proxies very often as a way to do split tunneling on Linux, as easy split-tunneling with WireGuard or OpenVPN isn't there yet.
