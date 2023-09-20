@@ -30,7 +30,7 @@ jobs:
           oauth-secret: ${{ secrets.TAILSCALE_SECRET }}
           hostname: Github-actions
           version: ${{ vars.TAILSCALE_VERSION }}
-          tags: tag:ci
+          tags: tag:deploy-ci
 
       - name: Github action cache
         uses: actions/cache@v2
