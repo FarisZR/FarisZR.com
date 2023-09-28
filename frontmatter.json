@@ -8,11 +8,6 @@
   ],
   "frontMatter.framework.id": "hugo",
   "frontMatter.content.publicFolder": "static",
-  "frontMatter.taxonomy.tags": [
-    "docker",
-    "docker compose",
-    "تثبيت دوكر لينكس"
-  ],
   "frontMatter.taxonomy.contentTypes": [
     {
       "name": "default",
