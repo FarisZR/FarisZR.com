@@ -11,7 +11,7 @@ tags:
   - docker container
   - حوسبة سحابية
 date: 2023-09-26
-image: thumbnail.jpg
+image: thumbnail.jpeg
 slug: docker-ipv6-setup-with-propagation
 keywords: 
   - docker

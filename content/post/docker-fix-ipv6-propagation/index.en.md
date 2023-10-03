@@ -10,7 +10,7 @@ tags:
   - docker container
   - cloud computing
 date: 2023-09-26
-image: thumbnail.jpg
+image: thumbnail.jpeg
 slug: docker-ipv6-setup-with-propagation
 summary: Docker IPv6 isn't as easy as it seems, exposing docker containers to IPv6 connections without any prior setup will endup with a lot of connections seemingly coming from the Gateway, in this post i explain how you fix IPv6 propagation by Enabling proper IPv6 support in docker.
 keywords: 
