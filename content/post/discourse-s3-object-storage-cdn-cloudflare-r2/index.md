@@ -27,10 +27,10 @@ keywords:
 لكن في تحديث [2023-03-16](https://developers.cloudflare.com/r2/reference/changelog/#2023-03-16) قامت Cloudflare بحل المشكلة, و [مجتمع أسس](https://aosus.org) يستخدم R2 الان ويعمل دون مشاكل. [discourse.aosus.org](https://discourse.aosus.org).
 حتى [اختبارات مشكلة gzip قديمة](https://gist.github.com/csuhta/0001d1bb74200412bc1d7f9e11ec4ea5) اصبحت تعمل!
 
-**[دسكورس لا يقوم باستخدام رابط CDN](https://meta.discourse.org/t/s3-cdn-url-not-being-used-on-non-image-uploads/175332) لللتنزيلات المباشرة, وهذا لا يعمل مع Cloudflare R2, يعني اي مرفقات غير مضمنه بالموضوع لا تعمل حاليا**
-
 ## الاعداد
 أتبع كامل الخطوات قبل متغيرات البيئة في [الشرح الرسمي](https://meta.discourse.org/t/configure-an-s3-compatible-object-storage-provider-for-uploads/148916)
+
+**تاكد من تفعيل خيار use s3 cdn for all uploads**
 
 أيضا Cloudflare R2 مجاني حتى 10GB! (10 مليون عملية قراءة و 1 مليون عملية كتابة), لذلك مجتمعات مثل أسس على الأغلب لن تدفع اي شيء!
 
