@@ -1,5 +1,5 @@
 ---
-title: Set up Debian/Ubuntu automatic updates with a schedule.
+title: Set up scheduled Debian/Ubuntu unattended upgrades
 categories:
   - guides
 tags:
@@ -8,7 +8,7 @@ tags:
   - apt
   - unattended-upgrades
 date: 2024-01-31
-slug: setup-debian-ubuntu-auto-update-with-schedule
+slug: setup-scheduled-debian-ubuntu-unattended-upgrades
 image: thumbnail.jpg
 draft: false
 keywords:

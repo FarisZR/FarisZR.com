@@ -8,7 +8,7 @@ tags:
   - apt
   - unattended-upgrades
 date: 2024-01-31
-slug: setup-debian-ubuntu-auto-update-with-schedule
+slug: setup-scheduled-debian-ubuntu-unattended-upgrades
 image: thumbnail.jpg
 draft: false
 canonicalurl: https://discourse.aosus.org/t/topic/3058
