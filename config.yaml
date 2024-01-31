@@ -23,7 +23,7 @@ languages:
     params:
       description: مدونتي, انشر فيها مواضيع عن التقنية والبنية التحتية, بالاضافة الى ارائي الشخصية. 
       sidebar:
-        subtitle: المدير التقني في مجتمع أسس,
+        subtitle: اعمل على مجتمع أسس,
           مؤسس هاكنتوش بالعربي.
           اذا كنت تريد التغيير، فكن اول مساهم فيه.
         avatar:
@@ -122,7 +122,7 @@ languages:
     params:
       description: Personal blog!, I write about tech, infrastructure and the occasional personal opinion.
       sidebar:
-        subtitle: Tecnical Director at Aosus,
+        subtitle: working on aosus.org,
           Founder of ARhackintosh.
           If you want change, be the first one to do it.
         avatar:
