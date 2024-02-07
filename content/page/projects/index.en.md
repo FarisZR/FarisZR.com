@@ -45,8 +45,7 @@ I also launched [Aosus services](https://aosus.org/services),
 where aosus hosts Privacy focused interfaces/proxies for popular websites, like YouTube, Twitter, Reddit etc. without tracking or Ads.
 
 I also managed [The Aosus Writing Contest](https://aosus.org/writing-contest) [summary in English](https://opencollective.com/aosus/projects/aosus-writing-contest), the first Contest of its kind in the Arabic world to support writers that write about FOSS in Arabic.
-
-You can support Aosus by donating on [OpenCollective](https://opencollective.com/aosus) or [Github Sponsors](https://github.com/sponsors/aosus), or by contributing to Aosus's [projects](https://github.com/aosus)
+You can find ways to support Aosus [here](https://aosus.org/en/support-us), you can also contribute to Aosus's [projects](https://github.com/aosus)
 
 ### my Achievements in Aosus
 
@@ -61,7 +60,7 @@ You can support Aosus by donating on [OpenCollective](https://opencollective.com
 - create a plan for the upcoming project, [Torjoman](https://github.com/aosus/torjoman), a new way to crowdsource translations directly from the users favorite apps. (English description available)
 - Add Aosus [to new social media platforms](https://twitter.com/Aosusorg/status/1556269856546250753)
 - Join [Discord](https://aosus.org/1847) using matrix bridges
-
+- [Getting non-profit 501(c)(3) status in the U.S.](https://aosus.org/en/1901) with Aosus's new fiscal sponsor, HCB from Hack club. 
 
 ## ARhackintosh
 [ARhackintosh](https://هاكنتوش.com), is the first complete Arabic community for Hackintosh, with an Open source guide, based on dortania, and a Kext archive.
