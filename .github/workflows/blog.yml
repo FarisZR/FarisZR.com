@@ -43,19 +43,27 @@ jobs:
       - name: Build
         run: hugo --minify -v --gc --baseURL https://fariszr.com --destination fariszr.com
 
-      - name: pre-compress to Brotli
-        run: | 
-            find fariszr.com -type f \( -name '*.html' -o -name '*.js' -o -name '*.css' -o -name '*.xml' -o -name '*.svg' \) \
-            -exec /bin/sh -c 'brotli -q 11 -o "$1.br" "$1"' /bin/sh {} \;
-      
-      - name: pre-compress to gzip
-        run: |
-            find fariszr.com -type f \( -name '*.html' -o -name '*.js' -o -name '*.css' -o -name '*.xml' -o -name '*.svg' \) \
-            -exec /bin/sh -c 'gzip -v -f -9 -c "$1" > "$1.gz"' /bin/sh {} \;
-      
-      - name: deploy
-        uses: fariszr/tailscale-ssh-deploy@main
+      - name: Include _headers file
+        run: cp _headers fariszr.com/_headers
+
+      - name: Publish to Cloudflare Pages
+        if: github.event_name != 'pull_request'
+        uses: cloudflare/pages-action@v1.5.0
         with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ID }}
+          projectName: fariszr
           directory: fariszr.com
-          remote_host: ${{ secrets.SERVER }}
-          remote_destination: web
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+
+      - name: Publish preview to Cloudflare Pages
+        if: github.event_name == 'pull_request'
+        uses: cloudflare/pages-action@v1.5.0
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ID }}
+          projectName: fariszr
+          directory: fariszr.com
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref.name }}
