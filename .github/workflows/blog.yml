@@ -23,15 +23,6 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
-      - name: setup Tailscale
-        uses: tailscale/github-action@main
-        with:
-          oauth-client-id: ${{ secrets.TAILSCALE_CLIENT_ID }}
-          oauth-secret: ${{ secrets.TAILSCALE_SECRET }}
-          hostname: Github-actions
-          version: ${{ vars.TAILSCALE_VERSION }}
-          tags: tag:deploy-ci
-
       - name: Github action cache
         uses: actions/cache@v2
         with:
