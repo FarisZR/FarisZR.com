@@ -11,6 +11,7 @@ tags:
 date: 2024-03-31
 slug: deploy-with-tailscale-ssh-github-action
 image: thumbnail.jpg
+canonicalurl: https://discourse.aosus.org/t/topic/3174
 keywords: 
     - tailscale
     - github 
