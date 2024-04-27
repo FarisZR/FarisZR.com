@@ -11,6 +11,8 @@ tags:
 date: 2023-05-01
 image: thumbnail.jpeg
 slug: discourse-s3-object-storage-cdn-cloudflare-r2
+aliases:
+  - /en/discourse-s3-object-storage-cdn-cloudflare-r2
 keywords:
   - Cloudflare R2
   - Cloudflare CDN

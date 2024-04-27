@@ -14,6 +14,8 @@ date: 2023-03-09
 image: thumbnail.jpg
 summary: Gitops with the simplicity of Docker-compose using Github actions
 slug: docker-compose-gitops-github
+aliases:
+  - /en/docker-compose-gitops-github/
 keywords:
   - github-actions
   - github

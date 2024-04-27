@@ -8,6 +8,8 @@ tags:
   - container
 date: 2023-12-27
 slug: scheduling-docker-jobs-without-cron
+aliases:
+  - /en/scheduling-docker-jobs-without-cron/
 image: thumbnail.jpg
 draft: false
 keywords:

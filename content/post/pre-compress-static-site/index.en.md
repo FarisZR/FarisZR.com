@@ -10,6 +10,8 @@ tags:
   - static site
 date: 2022-09-14
 slug: compress-static-site-brotli-gzip
+aliases:
+  - /en/compress-static-site-brotli-gzip/
 image: thumbnail.jpg
 keywords:
   - gzip

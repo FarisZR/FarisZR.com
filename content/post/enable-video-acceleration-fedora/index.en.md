@@ -13,6 +13,8 @@ keywords:
   - H264 video acceleration on fedora
 image: thumbnail.jpg
 slug: enable-video-acceleration-fedora
+aliases:
+  - /en/enable-video-acceleration-fedora/
 date: 2023-01-31
 ---
 **(This only affects MESA, so only people using open source drivers)**

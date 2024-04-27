@@ -5,6 +5,8 @@ categories:
 date: 2023-07-23
 image: thumbnail.png
 slug: send-matrix-message-curl
+aliases:
+  - /en/send-matrix-message-curl/
 tags:
     - matrix
     - synapse

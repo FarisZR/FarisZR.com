@@ -5,6 +5,8 @@ categories:
 date: 2024-02-29
 image: thumbnail.jpg
 slug: add-missing-packages-wordpress-docker
+aliases:
+  - /en/add-missing-packages-wordpress-docker/
 tags:
   - docker
   - wordpress

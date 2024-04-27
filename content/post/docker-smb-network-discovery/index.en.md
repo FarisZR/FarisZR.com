@@ -19,6 +19,8 @@ date: 2022-12-31
 image: thumbnail.jpg
 summary: Easily setup an SMB share with network discovery for MacOS and windows using docker and Docker-compose
 slug: docker-smb-network-discovery
+aliases:
+    - /en/docker-smb-network-discovery/
 keywords: 
     - smb
     - samba 

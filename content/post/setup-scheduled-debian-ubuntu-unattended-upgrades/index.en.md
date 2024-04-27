@@ -9,6 +9,8 @@ tags:
   - unattended-upgrades
 date: 2024-01-31
 slug: setup-scheduled-debian-ubuntu-unattended-upgrades
+aliases:
+  - /en/setup-scheduled-debian-ubuntu-unattended-upgrades/
 image: thumbnail.jpg
 draft: false
 keywords:

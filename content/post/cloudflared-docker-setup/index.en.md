@@ -3,6 +3,8 @@ title: Setup Cloudflared using Docker without the ZT dashboard
 categories:
   - guides
 slug: cloudflared-docker-setup
+aliases:
+  - /en/cloudflared-docker-setup/
 tags:
   - Cloudflare
   - Cloudflare Argo tunnel

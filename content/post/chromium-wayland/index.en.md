@@ -15,6 +15,8 @@ tags:
 date: 2022-09-02
 image: image.jpg
 slug: fix-screensharing-wayland-chromium
+aliases:
+  - /en/fix-screensharing-wayland-chromium/
 summary: how to share your display in Chromium browsers on Wayland using Pipewire
 lastmod: 2022-10-28
 ---

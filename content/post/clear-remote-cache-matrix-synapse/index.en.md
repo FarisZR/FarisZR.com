@@ -5,6 +5,8 @@ categories:
 date: 2023-09-28
 image: thumbnail.jpg
 slug: clear-remote-media-cache-matrix-synapse
+aliases:
+  - /en/clear-remote-media-cache-matrix-synapse/
 tags:
   - matrix
   - synapse

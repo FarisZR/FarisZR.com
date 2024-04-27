@@ -10,6 +10,8 @@ tags:
 date: 2023-05-02
 image: thumbnail.jpeg
 slug: eu-gdpr-jsdelivr-free-cdn-ban
+aliases:
+  - /en/eu-gdpr-jsdelivr-free-cdn-ban/
 summary: You might want to think twice about using free CDNs, the google fonts ban in Germany might affects the legality of CDNs like JSdelivr and Bunny fonts.
 keywords:
   - Jsdelivr
