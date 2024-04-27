@@ -12,14 +12,103 @@ module:
     - path: github.com/CaiJimmy/hugo-theme-stack/v3
       disable: false
 
-DefaultContentLanguage: ar
+DefaultContentLanguage: en
 
 languages:
+  en:
+    languageName: English
+    languageCode: en-us
+    weight: 1
+    params:
+      description: Personal blog!, I write about tech, infrastructure and the occasional personal opinion.
+      sidebar:
+        subtitle: working on aosus.org,
+          Founder of ARhackintosh.
+          If you want change, be the first one to do it.
+        avatar:
+          local: true
+          src: images/profile.webp
+      author:
+        name: FarisZR
+      copyright: All rights reserved
+    menu:
+      main:
+        - identifier: home
+          name: Home
+          url: /
+          weight: 1
+          params:
+            icon: home
+
+        - identifier: projects
+          name: My Projects
+          url: /projects
+          weight: 2
+          params:
+            icon: grid
+
+        - identifier: about
+          name: About
+          url: /about
+          weight: 3
+          params:
+            icon: user
+
+        - identifier: search
+          name: Search
+          url: /search
+          weight: 4
+          params:
+            icon: search
+
+        - identifier: archives
+          name: Archives
+          url: /archives
+          weight: 5
+          params:
+            icon: archives
+
+      social:
+        - identifier: twitter
+          name: Twitter
+          url: https://twitter.com/fareszr
+          weight: 1
+          params:
+            icon: brand-twitter
+
+        - identifier: github
+          name: GitHub
+          url: https://github.com/FarisZR
+          weight: 2
+          params:
+            icon: brand-github
+
+        - identifier: gitlab
+          name: GitLab
+          url: https://gitlab.com/FarisZR
+          weight: 3
+          params:
+            icon: gitlab
+
+        - identifier: codeberg
+          name: Codeberg
+          url: https://codeberg.org/FarisZR
+          weight: 4
+          params:
+            icon: codeberg
+
+        - identifier: RSS
+          name: RSS
+          url: https://fariszr.com/en/index.xml
+          weight: 5
+          params:
+            icon: rss
+
   ar:
     languagedirection: rtl
     languageName: العربية
     languageCode: ar-sa
-    weight: 1
+    weight: 2
     params:
       description: مدونتي, انشر فيها مواضيع عن التقنية والبنية التحتية, بالاضافة الى ارائي الشخصية. 
       sidebar:
@@ -36,35 +125,35 @@ languages:
       main:
         - identifier: home
           name: الرئيسية
-          url: /
+          url: /ar
           weight: 1
           params:
             icon: home
 
         - identifier: projects
           name: مشاريعي
-          url: /projects
+          url: /ar/projects
           weight: 2
           params:
             icon: grid
 
         - identifier: about
           name: عني
-          url: /about
+          url: /ar/about
           weight: 3
           params:
             icon: user
 
         - identifier: Archives
           name: الأرشيف
-          url: /archives
+          url: /ar/archives
           weight: 4
           params:
             icon: archives
 
         - identifier: search
           name: بحث
-          url: /search
+          url: /ar/search
           weight: 5
           params:
             icon: search
@@ -115,94 +204,6 @@ languages:
         - name: اقسام
           weight: 200
 
-  en:
-    languageName: English
-    languageCode: en-us
-    weight: 2
-    params:
-      description: Personal blog!, I write about tech, infrastructure and the occasional personal opinion.
-      sidebar:
-        subtitle: working on aosus.org,
-          Founder of ARhackintosh.
-          If you want change, be the first one to do it.
-        avatar:
-          local: true
-          src: images/profile.webp
-      author:
-        name: FarisZR
-      copyright: All rights reserved
-    menu:
-      main:
-        - identifier: home
-          name: Home
-          url: /en
-          weight: 1
-          params:
-            icon: home
-
-        - identifier: projects
-          name: My Projects
-          url: /en/projects
-          weight: 2
-          params:
-            icon: grid
-
-        - identifier: about
-          name: About
-          url: /en/about
-          weight: 3
-          params:
-            icon: user
-
-        - identifier: search
-          name: Search
-          url: /en/search
-          weight: 4
-          params:
-            icon: search
-
-        - identifier: archives
-          name: Archives
-          url: /en/archives
-          weight: 5
-          params:
-            icon: archives
-
-      social:
-        - identifier: twitter
-          name: Twitter
-          url: https://twitter.com/fareszr
-          weight: 1
-          params:
-            icon: brand-twitter
-
-        - identifier: github
-          name: GitHub
-          url: https://github.com/FarisZR
-          weight: 2
-          params:
-            icon: brand-github
-
-        - identifier: gitlab
-          name: GitLab
-          url: https://gitlab.com/FarisZR
-          weight: 3
-          params:
-            icon: gitlab
-
-        - identifier: codeberg
-          name: Codeberg
-          url: https://codeberg.org/FarisZR
-          weight: 4
-          params:
-            icon: codeberg
-
-        - identifier: RSS
-          name: RSS
-          url: https://fariszr.com/en/index.xml
-          weight: 5
-          params:
-            icon: rss
 
 
 permalinks:
