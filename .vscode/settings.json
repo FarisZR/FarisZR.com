@@ -15,6 +15,9 @@
     "frontMatter.framework.startCommand": "docker run --rm  -it -u 1000:1000 -p 1313:1313 -v $PWD:/src klakegg/hugo:ext-alpine-ci hugo serve --minify --disableFastRender -v --gc",
     "languageToolLinter.languageTool.ignoredWordsInWorkspace": [
         "تناسب اصدار",
-        "حقوق الملكيه"
+        "حقوق الملكيه",
+        "خيار اخر",
+        "دون الحاجه",
+        "عمل اعادة"
     ]
 }
