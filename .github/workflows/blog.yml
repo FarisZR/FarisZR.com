@@ -37,6 +37,9 @@ jobs:
       - name: Include _headers file
         run: cp _headers fariszr.com/_headers
 
+      - name: Include _redirects file
+        run: cp _redirects fariszr.com/_redirects
+
       - name: Publish to Cloudflare Pages
         if: github.event_name != 'pull_request'
         uses: cloudflare/pages-action@v1.5.0
