@@ -83,19 +83,19 @@ languages:
           params:
             icon: brand-github
 
+        - identifier: Linkedin
+          name: Linkedin
+          url: https://www.linkedin.com/in/fariszr/
+          weight: 3
+          params:
+            icon: linkedin
+
         - identifier: gitlab
           name: GitLab
           url: https://gitlab.com/FarisZR
-          weight: 3
-          params:
-            icon: gitlab
-
-        - identifier: codeberg
-          name: Codeberg
-          url: https://codeberg.org/FarisZR
           weight: 4
           params:
-            icon: codeberg
+            icon: gitlab
 
         - identifier: RSS
           name: RSS
@@ -173,19 +173,19 @@ languages:
           params:
             icon: brand-github
 
+        - identifier: Linkedin
+          name: Linkedin
+          url: https://www.linkedin.com/in/fariszr/
+          weight: 3
+          params:
+            icon: linkedin
+
         - identifier: gitlab
           name: GitLab
           url: https://gitlab.com/FarisZR
-          weight: 3
-          params:
-            icon: gitlab
-
-        - identifier: codeberg
-          name: Codeberg
-          url: https://codeberg.org/FarisZR
           weight: 4
           params:
-            icon: codeberg
+            icon: gitlab
 
         - identifier: RSS
           name: RSS
