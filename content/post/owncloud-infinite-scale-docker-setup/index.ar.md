@@ -1,17 +1,17 @@
 ---
-title: Setup ownCloud infinite scale with docker compose
+title: تثبيت ownCloud infinite scale مع docker compose
 categories:
-  - guides
+  - شروحات
 keywords:
   - Owncloud infinite scale
   - OCIS
   - nextcloud alternative
   - LibreOffice
-  - 
 image: thumbnail.jpg
 slug: owncloud-infinite-scale-docker-setup
 summary: شرح بسيط حول تثبيت OCIS باستخدام docker compose مع خدمات اضافية apache Taki لبحث افضل و LibreOffice.
 date: 2024-07-31
+canonicalurl: https://discourse.aosus.org/t/topic/3387
 ---
 
 برمجية ownCloud infinite scale هي برمجية جديدة لتستبدل الإصدار العادي من ownCloud و Nextcloud المكتوب بPHP.
