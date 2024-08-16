@@ -1,7 +1,7 @@
 ---
 title: تثبيت ownCloud infinite scale مع docker compose
 categories:
-  - شروحات
+  - guides
 keywords:
   - Owncloud infinite scale
   - OCIS

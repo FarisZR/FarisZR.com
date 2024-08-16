@@ -1,7 +1,7 @@
 ---
 title: مشاركة مجلد Samba يظهر بالشبكة المحلية بستخدام docker-compose
 categories: 
-    - شروحات
+    - guides
 tags:
     - linux
     - smb

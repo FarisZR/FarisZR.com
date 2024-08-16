@@ -1,7 +1,7 @@
 ---
 title: تخزين S3 و CDN مجاني ل Discourse مع Cloudflare R2
 categories:
-  - مقتطفات-سريعة
+  - quick-snippets
 tags:
   - discourse
   - cloudflare

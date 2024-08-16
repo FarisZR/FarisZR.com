@@ -1,7 +1,7 @@
 ---
 title: إضافة الحزم المفقودة إلى صور Docker لـ WordPress دون إعادة بنائها
 categories:
-  - مقتطفات-سريعة
+  - quick-snippets
 date: 2024-02-29
 image: thumbnail.jpg
 slug: add-missing-packages-wordpress-docker

@@ -1,7 +1,7 @@
 ---
 title: تثبيت Squid proxy مع دوكر
 categories:
-  - شروحات
+  - guides
 tags:
   - squid
   - docker

@@ -1,7 +1,7 @@
 ---
 title: جدولة تحديثات تلقائية للنظام و النواة على اوبونتو و دبيان
 categories:
-  - شروحات
+  - guides
 tags:
   - debian
   - ubuntu

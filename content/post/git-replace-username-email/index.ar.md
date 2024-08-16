@@ -1,7 +1,7 @@
 ---
 title: كيف تغير أسم وبريد مساهم في تاريخ Git
 categories: 
-    - شروحات
+    - guides
 date: 2021-11-01
 image: thumbnail.jpeg
 slug: git-replace-username-email

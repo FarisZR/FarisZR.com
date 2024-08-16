@@ -1,7 +1,7 @@
 ---
 title: كيف تشغل docker-compose على Podman
 categories: 
-    - شروحات
+    - guides
 date: 2021-09-30
 image: thumbnail.jpeg
 slug: docker-compose-on-podman

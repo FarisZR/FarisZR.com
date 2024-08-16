@@ -1,7 +1,7 @@
 ---
 title: تثبيت Portainer, واجهه رسومية ل docker و docker compose لتسهيل تثبيت الحاويات
 categories: 
-    - شروحات
+    - guides
 date: 2022-03-02
 image: https://cdn-cf-discourse.aosus.org/original/2X/d/dd5d1e9eb6459913941d0a37a1261eaee07e76ab.jpeg
 slug: portainer-setup

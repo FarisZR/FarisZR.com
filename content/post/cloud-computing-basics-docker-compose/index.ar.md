@@ -1,7 +1,7 @@
 ---
 title: أساسيات عالم الحاويات docker / docker-compose والحوسبة السحابية
 categories: 
-    - شروحات
+    - guides
 date: 2022-02-20
 image: thumbnail.jpeg
 slug: cloud-computing-basics-docker-compose

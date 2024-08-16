@@ -1,7 +1,7 @@
 ---
 title: كيف تضغط موقع ثابت الى صيغة Gzip و Brotli
 categories:
-  - مقتطفات-سريعة
+  - quick-snippets
 tags:
   - Caddy
   - Hugo

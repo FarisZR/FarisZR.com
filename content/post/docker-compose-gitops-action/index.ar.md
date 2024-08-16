@@ -1,7 +1,7 @@
 ---
 title: Docker compose Gitops مع Github Actions
 categories: 
-    - شروحات
+    - guides
 tags:
     - linux
     - docker

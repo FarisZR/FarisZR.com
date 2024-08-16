@@ -1,7 +1,7 @@
 ---
 title: جدولة حاويات Docker دون Cron
 categories:
-  - شروحات
+  - guides
 tags:
   - docker
   - cron

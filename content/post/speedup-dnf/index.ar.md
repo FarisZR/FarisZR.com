@@ -4,7 +4,7 @@ keywords:
   - Linux
   - Fedora
 categories:
-  - شروحات
+  - guides
 date: 2021-06-22
 image: dnf.png
 slug: speedup-dnf
