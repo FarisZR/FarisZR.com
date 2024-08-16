@@ -4,5 +4,7 @@ github.com/CaiJimmy/hugo-theme-stack/v3 v3.15.0 h1:jUfMcngRbbwtPd8IiiRux1Zek/cya
 github.com/CaiJimmy/hugo-theme-stack/v3 v3.15.0/go.mod h1:IPmCXiIxlFSLFYS0tOmYP6ySLviyeNVSabyvSuaxD+I=
 github.com/CaiJimmy/hugo-theme-stack/v3 v3.16.0 h1:ZWF66g7aXA840CzsT4lv65wHSojqwY0Yj7KdvOkn5NA=
 github.com/CaiJimmy/hugo-theme-stack/v3 v3.16.0/go.mod h1:IPmCXiIxlFSLFYS0tOmYP6ySLviyeNVSabyvSuaxD+I=
+github.com/CaiJimmy/hugo-theme-stack/v3 v3.26.0 h1:kLZSTvo+E3S2YWw59DjXWtKLNbw3JaL7Z+VAjcegqa0=
+github.com/CaiJimmy/hugo-theme-stack/v3 v3.26.0/go.mod h1:IPmCXiIxlFSLFYS0tOmYP6ySLviyeNVSabyvSuaxD+I=
 github.com/FarisZR/Hugo-stack-no-cdn v0.0.0-20220705212034-e06f9c087562 h1:vHnKT1KO7ZnN2N/Kqq9eoa5tEPLm5JvWxADwmD/cgWI=
 github.com/FarisZR/Hugo-stack-no-cdn v0.0.0-20220705212034-e06f9c087562/go.mod h1:wXjh6I2Y/sbUZUMHqNeOmjV3fy/QZCAgqsG0ssEU1xo=

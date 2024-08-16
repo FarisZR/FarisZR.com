@@ -1,7 +1,7 @@
 ---
 title: مسح كاش من خوادم أخرى في خادم Synapse  ل Matrix
 categories: 
-  - مقتطفات-سريعة
+  - quick-snippets
 date: 2023-09-28
 image: thumbnail.jpg
 slug: clear-remote-cache-matrix-synapse

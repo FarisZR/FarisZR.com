@@ -1,7 +1,7 @@
 ---
 title: تشغيل البحث النصي الشامل (fulltextsearch) في Nextcloud على Docker
 categories:
-  - شروحات
+  - guides
 tags:
   - nextcloud
   - docker

@@ -1,7 +1,7 @@
 ---
 title: كيفية تصدير مشاريع لخادم عبر Tailscale SSH وGitHub Actions
 categories: 
-    - مقتطفات سريعة
+    - quick-snippets
 tags:
     - github
     - github actions

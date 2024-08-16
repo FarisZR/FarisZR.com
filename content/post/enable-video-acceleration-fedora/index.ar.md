@@ -1,7 +1,7 @@
 ---
 title: تشغيل تسريع الفيديو على كرت الشاشه في فيدورا 36+/Centos/RHEL
 categories:
-  - شروحات
+  - guides
 keywords:
   - Video Acceleration
   - Fedora drivers

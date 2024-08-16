@@ -1,7 +1,7 @@
 ---
 title: أرسل رسالة ماتركس بستخدام CURL
 categories: 
-    - مقتطفات-سريعة
+    - quick-snippets
 date: 2023-07-23
 image: thumbnail.png
 slug: send-matrix-message-curl

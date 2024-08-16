@@ -1,7 +1,7 @@
 ---
 title: تحديد Cache-Control Header للملفات الثابتة في Caddy
 categories:
-  - مقتطفات-سريعة
+  - quick-snippets
 tags:
   - Cache-Control
   - Caddy
