@@ -5,6 +5,7 @@ categories:
 date: 2024-08-31
 image: thumbnail.jpg
 slug: brave-Leo-with-ollama-using-docker
+canonicalurl: https://discourse.aosus.org/t/topic/3423
 tags:
   - Brave Browser
   - local LLM
