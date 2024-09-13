@@ -11,7 +11,7 @@ tags:
   - groq
 date: 2024-09-08
 slug: use-custom-providers-with-zed-groq
-summary: a quick guind on how to integrate custom Large Language Models into Zed, a new open-source code editor, using providers like Groq.
+summary: a quick guide on how to integrate custom Large Language Models into Zed, a new open-source code editor, using providers like Groq.
 image: thumbnail.jpg
 keywords:
   - groq
@@ -19,7 +19,7 @@ keywords:
   - Zed
 ---
 
-[Zed](https://zed.dev/) is a new open source code editor on the block, which has a top-notch Ai Implementation, aiming to compete with Cursor.
+[Zed](https://zed.dev/) is a new open source code editor on the block, which has a top-notch Ai integration, aiming to compete with Cursor.
 
 You can use [Zed Ai for free](https://zed.dev/blog/zed-ai), it will use Claude 3.5 sonnet with strict rate limits, and it also may use your Inputs for training.
 
