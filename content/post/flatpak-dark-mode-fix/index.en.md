@@ -1,5 +1,5 @@
 ---
-title: Fix dark mode in Flatpak apps
+title: Quick Fixes for Flatpak Dark Mode Detection Issues
 categories:
   - quick-snippets
 tags:
@@ -18,9 +18,9 @@ keywords:
   - Ubuntu
 ---
 
-Flatpak is the most popular universal distribution format on Linux, but I still have issues with dark mode detection in certain applications.
+Flatpak is the most popular universal distribution format on Linux, but I still face issues with dark mode detection in some apps.
 
-However, I have found some workarounds to fix this.
+Luckily I found some workarounds to fix this.
 
 ## Make sure dark mode themes are installed for flatpak updates
 Technically, flatpak should automatically detect the theme you're using and install it, but if for some reason it doesn't, you can manually install the gtk3 themes you need.
