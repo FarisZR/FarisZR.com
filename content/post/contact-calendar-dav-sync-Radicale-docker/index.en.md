@@ -1,16 +1,16 @@
 ---
-title: Setup Contact and Calendar sync using Radicale and Docker compose.
+title: Setup Contact and Calendar (dav)sync using Radicale and Docker compose.
 categories:
   - guides
 tags:
   - docker
   - compose
   - Linux
-draft: true
-date: 2024-11-29
-slug: contact-calendar-sync-Radicale-docker
-summary: Sometimes there are issues with flatpak apps not following Dark mode on gnome, here are few fixes and workarounds for this. 
-image: thumbnail.png
+  - caldav
+date: 2024-11-30
+slug: contact-calendar-dav-sync-Radicale-docker
+summary: How to setup contact and calendar syncing across devices using Radicale server and Docker compose, with authentication and reverse proxy configuration.
+image: thumbnail.jpg
 keywords:
   - Radicale
   - davx
@@ -71,11 +71,12 @@ services:
 
 There's a template config file for the docker image, we still need to change something to be able to set up htpasswd auth.
 
-Create a file named config with the raw content of [the config file from github](https://github.com/tomsquest/docker-radicale/blob/master/config)
+Create a file named config inside the mounted config directory with the raw content of [the config file from github](https://github.com/tomsquest/docker-radicale/blob/master/config)
 
-and modify it to your liking
+and modify it to your liking, if you want to change the data directory, make sure to adjust the mount points in docker compose accordingly.
+
 ## Auth
-Make sure the auth section looks something like this:
+We need to adjust the auth section to enable authentication with a password, here's an example:
 
 ```ini
 [auth]
@@ -91,7 +92,7 @@ Now, as you probably noticed, htpasswd encryption is set to bcrypt, which means 
 echo -n "your password" | mkpasswd --method=bcrypt
 ```
 
-and then create a file called `users' in the mounted `config' directory.
+Then create a file called `users` in the mounted `config` directory.
 It should be formatted like this:
 
 ```htpasswd
@@ -107,5 +108,6 @@ sync.example.com {
 	encode zstd gzip
 }
 ```
+
 ## Importing data
 For me, importing data from the web UI didn't work, I just re-imported my contacts on my phone and it worked.
