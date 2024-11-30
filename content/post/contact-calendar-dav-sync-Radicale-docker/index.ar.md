@@ -1,5 +1,5 @@
 ---
-title: تثبيت خادم Radicale لمزامنة جهات الاتصال والتقويم مع Docker.
+title: تثبيت خادم Radicale بستخدام Docker لمزامنة جهات الاتصال والتقويم
 categories:
   - guides
 tags:
