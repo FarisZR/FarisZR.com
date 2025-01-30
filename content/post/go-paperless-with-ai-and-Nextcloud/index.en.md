@@ -20,9 +20,17 @@ keywords:
 draft: true
 ---
 
-Having a scanner is the first step of going paperless, however with time you realize that keeping stuff in order and finding documents quickly becomes a challenge.
+Having a scanner is the first step of going paperless, however with time you realize that keeping stuff in order and finding documents quickly becomes a challenge, even when using full text search in cloud search.
 
-Thats why Document management Systems like Paperless-ngx exist.
+Thats why Document management Systems like Paperless-ngx exist.7
+and in this post i'm going to setup paperless-ngx with Nextcloud Integration and automated AI tagging and chatting.
+
+## Docker-composez
+
+For the docker compose setup i don't have to explain much, Paperless-ngx has template docker files ready to use in their Git repos:
+https://github.com/paperless-ngx/paperless-ngx/tree/main/docker/compose
+
+
 
 ## Sources
 https://www.madebyagents.com/blog/paperless-ngx-nextcloud-integration
