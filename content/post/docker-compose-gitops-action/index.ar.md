@@ -12,7 +12,7 @@ tags:
     - cloud computing
 date: 2023-03-09
 image: thumbnail.jpg
-summary: عمل Docker compose Gitops بستخدام Github actions
+description: عمل Docker compose Gitops بستخدام Github actions
 slug: docker-compose-gitops-github
 canonicalurl: https://discourse.aosus.org/t/topic/2762
 keywords: 

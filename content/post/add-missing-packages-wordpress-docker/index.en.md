@@ -17,7 +17,7 @@ tags:
 keywords: 
   - docker
   - wordpress
-summary: how to add missing Linux packages to WordPress Docker images without the need to rebuild them for each update.
+description: how to add missing Linux packages to WordPress Docker images without the need to rebuild them for each update.
 ---
 If you use WordPress in docker, sometimes you may have some plugins complaining about missing libraries / packages, like for example EWWW image optimizer, that was complaining about missing image libraries.
 

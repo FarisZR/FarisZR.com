@@ -15,7 +15,7 @@ tags:
 date: 2022-09-02
 image: image.jpg
 slug: fix-screensharing-wayland-chromium
-summary: كيفية تشغيل مشاركة الشاشة على متصفحات كروميم بستخدام Pipewire
+description: كيفية تشغيل مشاركة الشاشة على متصفحات كروميم بستخدام Pipewire
 ---
 
 السلام عليكم.

@@ -15,7 +15,7 @@ tags:
   - cloudflared docker setup
   - Cloudflare Zero Trust
 date: 2022-10-28
-summary: Setting up Cloudflared in docker to tunnel to a container without expoing the server.
+description: Setting up Cloudflared in docker to tunnel to a container without expoing the server.
 image: thumbnail-en.jpg
 lastmod: 2022-11-07
 ---

@@ -11,7 +11,7 @@ tags:
   - groq
 date: 2024-09-08
 slug: use-custom-providers-with-zed-groq
-summary: a quick guide on how to integrate custom Large Language Models into Zed, a new open-source code editor, using providers like Groq.
+description: a quick guide on how to integrate custom Large Language Models into Zed, a new open-source code editor, using providers like Groq.
 image: thumbnail.jpg
 keywords:
   - groq

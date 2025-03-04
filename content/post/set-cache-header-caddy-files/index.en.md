@@ -11,7 +11,7 @@ tags:
 slug: set-cache-header-caddy-files
 aliases:
   - /en/set-cache-header-caddy-files/
-summary: A quick way to set the "Cache-Control" header in Caddy for static files
+description: A quick way to set the "Cache-Control" header in Caddy for static files
 lastmod: 2022-09-30
 image: thumbnail.jpg
 ---

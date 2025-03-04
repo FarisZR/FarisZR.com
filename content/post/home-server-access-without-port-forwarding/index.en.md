@@ -14,7 +14,7 @@ keywords:
   - Rathole setup
 image: thumbnail.jpg
 slug: home-server-access-without-port-forwarding
-summary: Learn how to make your home server accessible on the Internet without port forwarding using Rathole, a simple TCP proxy that ensures security and privacy.
+description: Learn how to make your home server accessible on the Internet without port forwarding using Rathole, a simple TCP proxy that ensures security and privacy.
 date: 2024-05-28
 ---
 

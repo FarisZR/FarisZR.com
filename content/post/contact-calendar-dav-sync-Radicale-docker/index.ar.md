@@ -11,7 +11,7 @@ tags:
 date: 2024-11-30
 canonicalurl: https://discourse.aosus.org/t/topic/3583
 slug: contact-calendar-dav-sync-Radicale-docker
-summary: شرح لطريقة تثبيت خادم Radicale لمزامنة جهات الاتصال والتقويم باستخدام Docker مع اعدادات الأمان والربط مع Caddy
+description: شرح لطريقة تثبيت خادم Radicale لمزامنة جهات الاتصال والتقويم باستخدام Docker مع اعدادات الأمان والربط مع Caddy
 image: thumbnail.jpg
 keywords:
   - Radicale

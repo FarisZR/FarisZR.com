@@ -17,7 +17,7 @@ tags:
 keywords: 
   - docker
   - wordpress
-summary: يوضح هذا الدليل المختصر كيفية إضافة الحزم اللينكس المفقودة إلى صور Docker الخاصة بـ WordPress بسهولة دون الحاجة إلى إعادة بنائها مع كل تحديث.
+description: يوضح هذا الدليل المختصر كيفية إضافة الحزم اللينكس المفقودة إلى صور Docker الخاصة بـ WordPress بسهولة دون الحاجة إلى إعادة بنائها مع كل تحديث.
 canonicalurl: https://discourse.aosus.org/t/topic/3103
 ---
 

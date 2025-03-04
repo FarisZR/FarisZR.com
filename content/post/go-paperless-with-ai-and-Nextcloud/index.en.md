@@ -12,7 +12,7 @@ tags:
   - ollama
 date: 2025-02-28
 slug: go-paperless-with-ai-and-Nextcloud-Integration
-summary: Set up a paperless workflow using Paperless-ngx with AI-powered OCR, automated tagging, and Nextcloud integration. Uses local LLMs through Ollama or cloud services for smart document processing.
+description: Set up a paperless workflow using Paperless-ngx with AI-powered OCR, automated tagging, and Nextcloud integration. Uses local LLMs through Ollama or cloud services for smart document processing.
 image: thumbnail.jpeg
 keywords:
   - Paperless-ngx

@@ -19,7 +19,7 @@ image: thumbnail.jpeg
 slug: nextcloud-fulltextsearch-elasticsearch-docker-setup
 aliases:
   - /en/nextcloud-fulltextsearch-elasticsearch-docker-setup/
-summary: A guick guide on how to setup nextcloud full text search on docker, using elasticsearch and supervisord to do automatic indexing.
+description: A guick guide on how to setup nextcloud full text search on docker, using elasticsearch and supervisord to do automatic indexing.
 keywords: docker
 ---
 

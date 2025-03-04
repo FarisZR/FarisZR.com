@@ -16,7 +16,7 @@ image: thumbnail.jpg
 keywords:
   - gzip
   - brotli
-summary: Simple commands to compress a static site to brotli and Gzip
+description: Simple commands to compress a static site to brotli and Gzip
 ---
 
 If you deploy your static site to a Web server like [Caddy](https://caddyserver.com), you might need to pre-compress it, especially if you want to use Brotli with Caddy as it's only supported for pre-compressed assets.

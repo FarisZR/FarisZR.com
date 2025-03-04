@@ -9,7 +9,7 @@ tags:
   - caldav
 date: 2024-11-30
 slug: contact-calendar-dav-sync-Radicale-docker
-summary: How to setup contact and calendar syncing across devices using Radicale server and Docker compose, with authentication and reverse proxy configuration.
+description: How to setup contact and calendar syncing across devices using Radicale server and Docker compose, with authentication and reverse proxy configuration.
 image: thumbnail.jpg
 keywords:
   - Radicale

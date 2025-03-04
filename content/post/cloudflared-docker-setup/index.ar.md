@@ -14,7 +14,7 @@ tags:
   - دوكر
   - linux
 date: 2022-10-28
-summary: تثبيت جسر Cloudflared لوصل الخادم بخوادم Cloudflared دون كشف الخادم نفسه, على
+description: تثبيت جسر Cloudflared لوصل الخادم بخوادم Cloudflared دون كشف الخادم نفسه, على
   Docker دون جذر او مع جذر.
 image: thumbnail.jpg
 ---

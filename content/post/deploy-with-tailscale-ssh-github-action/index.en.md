@@ -11,7 +11,7 @@ date: 2024-03-31
 slug: deploy-with-tailscale-ssh-github-action
 aliases:
     - /en/deploy-with-tailscale-ssh-github-action/
-summary: deploy to your server without exposing an ssh port using tailscale-ssh-deploy, a GitHub action that utilizes Tailscale SSH.
+description: deploy to your server without exposing an ssh port using tailscale-ssh-deploy, a GitHub action that utilizes Tailscale SSH.
 image: thumbnail.jpg
 keywords: 
     - tailscale

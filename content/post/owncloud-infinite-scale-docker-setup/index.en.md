@@ -10,7 +10,7 @@ keywords:
   - Full text search
 image: thumbnail.jpg
 slug: owncloud-infinite-scale-docker-setup
-summary: a quick guide on setting up ownCloud infinite scale using docker compose with additional services like Apache Taki for better full search and Libreoffice.
+description: a quick guide on setting up ownCloud infinite scale using docker compose with additional services like Apache Taki for better full search and Libreoffice.
 date: 2024-07-31
 ---
 

@@ -13,7 +13,7 @@ tags:
   - fedora
   - linux
   - Redhat Dnf
-summary: حل مشكلة سرعة التنزيل المعروفة في DNF على توزيعات Redhat
+description: حل مشكلة سرعة التنزيل المعروفة في DNF على توزيعات Redhat
 ---
 
 **هذا الموضوع كتب على [مجتمع أسس](https://discourse.aosus.org/t/topic/1976)**

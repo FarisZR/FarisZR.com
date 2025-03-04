@@ -9,7 +9,7 @@ tags:
   - Linux
 date: 2024-10-28
 slug: flatpak-dark-mode-fix
-summary: Sometimes there are issues with flatpak apps not following Dark mode on gnome, here are few fixes and workarounds for this. 
+description: Sometimes there are issues with flatpak apps not following Dark mode on gnome, here are few fixes and workarounds for this. 
 image: thumbnail.png
 keywords:
   - gnome

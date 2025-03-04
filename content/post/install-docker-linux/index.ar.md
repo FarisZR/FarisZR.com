@@ -12,7 +12,7 @@ tags:
 lastmod: 2022-09-01
 image: docker-thumbnail.jpg
 slug: install-docker-compose
-summary: شرح كيفية تثبيت Docker و Docker-compose على توزيعات لينكس الشهيرة
+description: شرح كيفية تثبيت Docker و Docker-compose على توزيعات لينكس الشهيرة
 canonicalurl: https://discourse.aosus.org/t/topic/2223
 keywords:
   - docker

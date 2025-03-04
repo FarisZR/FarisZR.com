@@ -9,7 +9,7 @@ keywords:
   - LibreOffice
 image: thumbnail.jpg
 slug: owncloud-infinite-scale-docker-setup
-summary: شرح بسيط حول تثبيت OCIS باستخدام docker compose مع خدمات اضافية apache Taki لبحث افضل و LibreOffice.
+description: شرح بسيط حول تثبيت OCIS باستخدام docker compose مع خدمات اضافية apache Taki لبحث افضل و LibreOffice.
 date: 2024-07-31
 canonicalurl: https://discourse.aosus.org/t/topic/3387
 ---

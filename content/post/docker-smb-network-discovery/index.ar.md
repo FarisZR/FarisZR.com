@@ -18,7 +18,7 @@ tags:
     - cloud computing
 date: 2022-12-31
 image: thumbnail.jpg
-summary: 
+description: 
 slug: docker-smb-network-discovery
 keywords: 
     - smb

@@ -9,7 +9,7 @@ tags:
   - Pagespeed
   - Serve static assets with an efficient cache policy
 slug: set-cache-header-caddy-files
-summary: طريقة لاضافة ال "Cache-Control" Header للملفات الثابتة
+description: طريقة لاضافة ال "Cache-Control" Header للملفات الثابتة
 lastmod: 2022-09-30
 image: thumbnail.jpg
 ---

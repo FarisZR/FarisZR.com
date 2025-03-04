@@ -18,7 +18,7 @@ tags:
   - دوكر
 date: 2023-06-08
 slug: nextcloud-fulltextsearch-elasticsearch-docker-setup
-summary: شرح لكيفية تشغيل Fulltextsearch في Nextcloud عند تشغيله على دوكر, بستخدام منصه بحث Elasticsearch.
+description: شرح لكيفية تشغيل Fulltextsearch في Nextcloud عند تشغيله على دوكر, بستخدام منصه بحث Elasticsearch.
 keywords: docker
 image: thumbnail.jpeg
 canonicalurl: https://discourse.aosus.org/t/topic/2813

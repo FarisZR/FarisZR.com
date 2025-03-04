@@ -14,7 +14,7 @@ image: thumbnail.jpg
 keywords:
   - gzip
   - brotli
-summary: أوامر بسيطة لضغط موقع ثابت لصيغة Brotli و Gzip
+description: أوامر بسيطة لضغط موقع ثابت لصيغة Brotli و Gzip
 ---
 
 إذا تستخدم خادم ويب مثل مثلا [Caddy](https://caddyserver.com),
