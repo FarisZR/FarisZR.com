@@ -11,7 +11,7 @@ tags:
   - AI llm
   - ollama
 date: 2025-02-28
-slug: go-paperless-with-ai-and-Nextcloud
+slug: go-paperless-with-ai-and-Nextcloud-Integration
 description: شرح كيفية رقمنة المستندات وإدارتها باستخدام Paperless-ngx مع دعم الذكاء الاصطناعي لاستخراج النصوص، وتضمينه مع Nextcloud للوصول السهل من مختلف الأجهزة.
 image: thumbnail.jpeg
 keywords:
