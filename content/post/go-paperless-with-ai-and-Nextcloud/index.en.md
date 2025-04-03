@@ -22,8 +22,8 @@ keywords:
 
 Having a scanner is the first step of going paperless, however with time you realize that keeping stuff in order and finding documents quickly becomes a challenge, even when using full text search in the cloud.
 
-Thats why Document management Systems like Paperless-ngx exist.
-and in this post i'm going to setup paperless-ngx with Nextcloud Integration, automated AI tagging and more accurate LLM-powered OCR.
+Thats why document management Systems like Paperless-ngx exist.
+And in this post I'm going to setup paperless-ngx with Nextcloud Integration, automated AI tagging and more accurate LLM-powered OCR.
 
 ## Docker-compose
 
@@ -33,9 +33,9 @@ https://docs.paperless-ngx.com/setup/#docker
 The needed changes will be mentioned in the next steps.
 
 ## setting up separate directories for each user
-unless you want every user to be able to see each others documents, you need to make sure paperless seperates the resulting files into a per user dir.
+unless you want every user to be able to see each others documents, you need to make sure paperless separates the resulting files into a per-user dir.
 
-you can do this with worksflows and storage Paths, or make it the default and just use workflows to assign documents to users when importing("consuming") docs.
+You can do this with workflows and storage Paths, or make it the default and just use workflows to assign documents to users when importing("consuming") docs.
 
 ### Make Paperless-ngx use a separate directory for each user.
 Using the placeholder details in the Paperless [docs](https://docs.paperless-ngx.com/advanced_usage/#filename-format-variables), you can set the default file format in Paperless using an environment variable.
@@ -64,7 +64,7 @@ Trigger type: Consumption started
 Filter Sources: Consumption folder
 
 Filter path: `/usr/src/paperless/consume/$USERNAME`
-This matches any file imported from a specifc directory
+This matches any file imported from a specific directory
 
 you can also use wildcards to match any file with the username in its directory by just writing `*$USERNAME*`
 
@@ -184,7 +184,7 @@ I found this thread on reddit to be useful on how to get started with Paperless:
 https://reddit.com/r/selfhosted/comments/sdv0rr/paperless_ng_which_tags_document_types/
 
 
-And now you have an (AI-assisted) Document managment System!
+And now you have an (AI-assisted) Document management System!
 
 ## Nextcloud Integration
 
