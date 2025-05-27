@@ -14,19 +14,14 @@
       "pageBundle": false,
       "fields": [
         {
-          "title": "categories",
-          "name": "categories",
-          "type": "categories"
-        },
-        {
           "title": "title",
           "name": "title",
           "type": "string"
         },
         {
-          "title": "date",
-          "name": "date",
-          "type": "datetime"
+          "title": "categories",
+          "name": "categories",
+          "type": "categories"
         },
         {
           "title": "tags",
@@ -34,45 +29,33 @@
           "type": "tags"
         },
         {
-          "title": "lastmod",
-          "name": "lastmod",
+          "title": "date",
+          "name": "date",
           "type": "datetime"
         },
         {
           "title": "image",
           "name": "image",
-          "type": "string"
-        },
-        {
-          "title": "type",
-          "name": "type",
-          "type": "string"
-        },
-        {
-          "title": "summary",
-          "name": "summary",
-          "type": "string"
+          "type": "image"
         },
         {
           "title": "keywords",
           "name": "keywords",
           "type": "choice",
           "choices": [
-            "docker",
-            "docker compose",
-            "Docker-compose",
-            "دوكر",
-            "مجتمع أسس"
+            "matrix",
+            "caddy",
+            "matrix-rtc"
           ]
         },
         {
-          "title": "draft",
-          "name": "draft",
-          "type": "datetime"
+          "title": "description",
+          "name": "description",
+          "type": "string"
         }
       ]
     }
   ],
-  "frontMatter.framework.startCommand": "docker run --pull always --rm  -it -p 1313:1313 -v $PWD:/src klakegg/hugo:ext-alpine-ci hugo serve --minify --disableFastRender",
+  "frontMatter.framework.startCommand": "docker run --rm  -it -u 1000:1000 -p 1313:1313 -v $PWD:/src ghcr.io/hugomods/hugo hugo serve --minify --disableFastRender --bind 0.0.0.0 -loglevel info --gc",
   "frontMatter.preview.host": "http://localhost:1313"
 }

@@ -12,7 +12,6 @@
         },
         "editor.minimap.enabled": false
     },
-    "frontMatter.framework.startCommand": "docker run --rm  -it -u 1000:1000 -p 1313:1313 -v $PWD:/src ghcr.io/hugomods/hugo hugo serve --minify --disableFastRender --bind 0.0.0.0 -loglevel info --gc",
     "languageToolLinter.languageTool.ignoredWordsInWorkspace": [
         "تناسب اصدار",
         "حقوق الملكيه",
