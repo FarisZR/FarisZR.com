@@ -74,13 +74,39 @@ mega-whoami\n\
 \n\
 # Set up sync if MEGA_SYNC_LOCAL_PATH and MEGA_SYNC_REMOTE_PATH are provided\n\
 if [ ! -z "$MEGA_SYNC_LOCAL_PATH" ] && [ ! -z "$MEGA_SYNC_REMOTE_PATH" ]; then\n\
-  echo "Setting up sync from $MEGA_SYNC_LOCAL_PATH to $MEGA_SYNC_REMOTE_PATH"\n\
-  mega-sync $MEGA_SYNC_LOCAL_PATH $MEGA_SYNC_REMOTE_PATH\n\
+  # Check if sync already exists\n\
+  if mega-sync | grep -q "$MEGA_SYNC_LOCAL_PATH"; then\n\
+    echo "Sync already exists for $MEGA_SYNC_LOCAL_PATH. Skipping sync setup."\n\
+  else\n\
+    echo "Setting up sync from $MEGA_SYNC_LOCAL_PATH to $MEGA_SYNC_REMOTE_PATH"\n\
+    mega-sync $MEGA_SYNC_LOCAL_PATH $MEGA_SYNC_REMOTE_PATH\n\
+  fi\n\
 fi\n\
 \n\
-# Keep the container running\n\
+# Keep the container running and show logs\n\
 echo "MegaCMD is now running and syncing..."\n\
-tail -f /dev/null\n\
+echo "Streaming MegaCMD logs..."\n\
+\n\
+# Wait a moment for log files to be created\n\
+sleep 2\n\
+\n\
+# Tail the mega-cmd log files to show activity in docker logs\n\
+# MegaCMD creates log files in ~/.megaCmd/\n\
+if [ -f /root/.megaCmd/megacmdserver.log ]; then\n\
+  tail -f /root/.megaCmd/megacmdserver.log &\n\
+fi\n\
+\n\
+if [ -f /root/.megaCmd/megacmd.log ]; then\n\
+  tail -f /root/.megaCmd/megacmd.log &\n\
+fi\n\
+\n\
+# Also monitor any sync-related logs\n\
+if [ -d /root/.megaCmd/logs ]; then\n\
+  tail -f /root/.megaCmd/logs/*.log 2>/dev/null &\n\
+fi\n\
+\n\
+# Keep the main process alive\n\
+wait\n\
 ' > /entrypoint.sh && chmod +x /entrypoint.sh
 
 # Set the entrypoint
