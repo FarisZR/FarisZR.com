@@ -74,7 +74,7 @@ Copilot can now generate a `copilot-instructions.md` file for itself.
 
 It might sound odd, but it works by providing the LLM with a general project overview, which you can build on with additional instructions.
 
-## One long, detailed prompt is way better than refining things later
+## One long, detailed prompt is way better than refining things later, especially for the Copilot coding agent
 
 This could be a side effect of the small context window, but there's a huge difference when actually starting with a fully detailed prompt.
 
@@ -82,7 +82,8 @@ The LLM generates based on its assumptions. The more detailed you are, the bette
 
 It's the reason why I think Kiro.dev will excel in this, because it unpacks these assumptions into separate markdown files, which then you can refine.
 
-You may also remediate this by adding a planing mode to copilot using the new custom chat mode feature.
+if you want to use the GitHub Copilot async coding agent, you can trigger it from the chat which will do a search and then write a really detailed prompt.
+The Results are way better than usual with this.
 
 
 In general, it's been decent, but most of the issues really stem from the limited 64k context window, it makes Gemini models almost useless.
