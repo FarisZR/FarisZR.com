@@ -17,11 +17,13 @@ keywords:
 description: Gitea Actions look good on the surface till you actually try to use it in production.
 ---
 
-My team wants to migrate from Jenkins with its insanely complex and hard to understand scripts, and we are using Gitea for hosting.
+My team uses Jenkins for CI/CD, and we want to migrate away from it due to its insanely complex and hard to understand scripts.
 
-The direct solution here is Gitea Actions, it's already there, integrated into Gitea and gives us the benefit of the huge action ecosystem for GitHub Actions.
+We use Gitea as our git hosting platform, the direct CI/CD offer for it is Gitea Actions, it's already there, integrated into Gitea and gives us access to the huge community Ecosystem around GitHub Actions.
 
 Gitea says everything works apart from a few limitations, then everything else should work, right?
+
+https://docs.gitea.com/usage/actions/comparison
 
 WRONG!!!!
 
