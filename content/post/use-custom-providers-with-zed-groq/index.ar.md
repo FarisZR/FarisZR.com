@@ -1,5 +1,5 @@
 ---
-title: أستخدم مقدم مخصص لتشغيل مثل Groq لتشغيل Zed AI
+title: أستخدم مقدم مخصص مثل Groq للذكاء الاصناعي في محرر ZED
 categories:
   - quick-snippets
 tags:
