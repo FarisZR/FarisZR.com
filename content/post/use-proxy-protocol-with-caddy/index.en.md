@@ -1,5 +1,5 @@
 ---
-title: How to use the Proxy Protocol with Caddy (Get source IP from a TCP proxy)
+title: How to use the Proxy Protocol with Caddy (Get the Source IP from a TCP proxy)
 tags:
   - caddy
   - tcp proxy
