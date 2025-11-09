@@ -19,7 +19,8 @@
         --tag-border-radius: 4px;
         --section-separation: 40px;
         --scrollbar-thumb: #F7D750;
-        --scrollbar-track: var(--body-background);
+    --scrollbar-track: var(--body-background);
+    --mermaid-sheen-color: rgba(0, 0, 0, 0.04);
     }
 
     /* use darker text color in light mode, to increase readability */
@@ -31,8 +32,8 @@
     }
 
     footer.site-footer .copyright {
-    color: var(--accent-color-darker);
-}
+        color: var(--accent-color-darker);
+    }
 
     :root[data-scheme=dark] {
         --body-background: #000000;
@@ -48,5 +49,207 @@
         --card-text-color-secondary: rgba(255, 255, 255, 0.7);
         --card-text-color-tertiary: rgba(255, 255, 255, 0.5);
         --card-separator-color: rgba(255, 255, 255, 0.12);
+        --mermaid-sheen-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .mermaid {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .mermaid[data-mermaid="pending"],
+    .mermaid[data-mermaid="rendering"] {
+        position: relative;
+        min-height: 3rem;
+    }
+
+    .mermaid[data-mermaid="rendering"]::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 6px;
+        background: repeating-linear-gradient(45deg, var(--mermaid-sheen-color), var(--mermaid-sheen-color) 10px, transparent 10px, transparent 20px);
+        animation: mermaid-sheen 1.4s linear infinite;
+    }
+
+    .mermaid[data-mermaid="rendered"],
+    .mermaid[data-mermaid="error"] {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mermaid[data-mermaid="error"] {
+        font-family: var(--code-font-family, monospace);
+        white-space: pre-wrap;
+    }
+
+    @keyframes mermaid-sheen {
+        0% {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: 200px 0;
+        }
     }
 </style>
+
+<script>
+(function () {
+    // Lazy-load Mermaid diagrams after the initial paint to avoid blocking first render.
+    const MERMAID_SRC = "/js/mermaid.min.js";
+    const getActiveScheme = () => (document.documentElement.dataset.scheme === "dark" ? "dark" : "default");
+    const escapeHtml = (value) =>
+        value.replace(/[&<>"']/g, (match) => {
+            switch (match) {
+                case "&":
+                    return "&amp;";
+                case "<":
+                    return "&lt;";
+                case ">":
+                    return "&gt;";
+                case '"':
+                    return "&quot;";
+                case "'":
+                    return "&#39;";
+                default:
+                    return match;
+            }
+        });
+
+    let mermaidLoader;
+
+    const loadMermaid = () => {
+        if (window.mermaid) {
+            return Promise.resolve(window.mermaid);
+        }
+
+        if (!mermaidLoader) {
+            mermaidLoader = new Promise((resolve, reject) => {
+                const script = document.createElement("script");
+                script.src = MERMAID_SRC;
+                script.async = true;
+                script.onload = () => resolve(window.mermaid);
+                script.onerror = () => reject(new Error("Failed to load Mermaid"));
+                document.head.appendChild(script);
+            });
+        }
+
+        return mermaidLoader;
+    };
+
+    const boot = () => {
+        const nodes = Array.from(document.querySelectorAll(".mermaid"));
+        if (!nodes.length) {
+            return;
+        }
+
+        nodes.forEach((node) => {
+            if (!node.dataset.mermaidSource) {
+                const script = node.querySelector('script[data-mermaid-source]');
+                const source = script ? script.textContent.trim() : node.textContent.trim();
+                node.dataset.mermaidSource = source;
+                if (script) {
+                    script.remove();
+                }
+            }
+            node.textContent = "";
+            node.dataset.mermaid = "pending";
+        });
+
+        let renderIndex = 0;
+        let renderScheduled = false;
+
+        const setState = (node, state) => {
+            node.dataset.mermaid = state;
+        };
+
+        const showFallback = (node, source) => {
+            node.innerHTML = `<pre>${escapeHtml(source)}</pre>`;
+            setState(node, "error");
+        };
+
+        const renderAll = async () => {
+            renderScheduled = false;
+
+            let mermaidApi;
+            try {
+                mermaidApi = await loadMermaid();
+            } catch (error) {
+                console.error(error);
+                nodes.forEach((node) => showFallback(node, node.dataset.mermaidSource));
+                return;
+            }
+
+            mermaidApi.initialize({
+                startOnLoad: false,
+                securityLevel: "loose",
+                theme: getActiveScheme(),
+            });
+
+            for (const node of nodes) {
+                const source = node.dataset.mermaidSource;
+                setState(node, "rendering");
+                try {
+                    const { svg, bindFunctions } = await mermaidApi.render(`mermaid-${renderIndex++}`, source);
+                    node.innerHTML = svg;
+                    if (typeof bindFunctions === "function") {
+                        bindFunctions(node);
+                    }
+                    setState(node, "rendered");
+                } catch (error) {
+                    console.error("Mermaid render failed", error);
+                    showFallback(node, source);
+                }
+            }
+        };
+
+        const scheduleRender = (waitForLoad = false) => {
+            if (renderScheduled) {
+                return;
+            }
+            renderScheduled = true;
+
+            const runner = () => {
+                const run = () => void renderAll();
+                if ("requestIdleCallback" in window) {
+                    window.requestIdleCallback(run, { timeout: 1500 });
+                } else {
+                    window.setTimeout(run, 200);
+                }
+            };
+
+            if (waitForLoad && document.readyState !== "complete") {
+                window.addEventListener("load", runner, { once: true });
+            } else {
+                runner();
+            }
+        };
+
+        scheduleRender(true);
+
+        const schemeObserver = new MutationObserver((mutations) => {
+            for (const mutation of mutations) {
+                if (mutation.type === "attributes" && mutation.attributeName === "data-scheme") {
+                    scheduleRender();
+                    break;
+                }
+            }
+        });
+
+        schemeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["data-scheme"] });
+
+        window.addEventListener("pageshow", (event) => {
+            if (event.persisted) {
+                scheduleRender();
+            }
+        });
+    };
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", boot, { once: true });
+    } else {
+        boot();
+    }
+})();
+</script>

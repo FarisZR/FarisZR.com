@@ -1,0 +1,12 @@
+{{- $lang := lower (.Type | default "") -}}
+{{- if eq $lang "mermaid" -}}
+<div class="mermaid" data-mermaid="pending">
+  <script type="text/plain" data-mermaid-source>{{- .Inner | safeHTML -}}</script>
+</div>
+{{- else -}}
+  {{- with .Type -}}
+    {{- highlight $.Inner . -}}
+  {{- else -}}
+<pre><code>{{- .Inner | safeHTML -}}</code></pre>
+  {{- end -}}
+{{- end -}}
