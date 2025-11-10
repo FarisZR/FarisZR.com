@@ -1,6 +1,6 @@
 ---
 title: "Knocker: access your homelab from outside without needing a VPN!"
-date: 2025-11-09
+date: 2025-11-08
 tags:
     - Homelab
     - knock-based
@@ -28,29 +28,50 @@ Knocker's strong point is its clients, i built a PWA web app, a go CLI and an An
 sequenceDiagram
     participant User
     participant Caddy as Reverse Proxy (Caddy)
+    participant Firewall as Firewalld (knocker zone)
     participant Knocker
-    participant Service as Protected Service
+    participant Service as Protected Service (port 22)
 
-    User->>Caddy: HTTP request to protected service
-    Caddy->>Knocker: GET /verify (copies X-Forwarded-For)
-    Knocker-->>Knocker: check always_allowed_ips / excluded_paths / whitelist
-    alt IP whitelisted
-        Knocker-->>Caddy: 200 OK (empty body)
-        Caddy->>Service: forward request
-        Service-->>Caddy: 200 OK
-        Caddy-->>User: 200 OK
-    else IP not whitelisted
-        Knocker-->>Caddy: 401 Unauthorized (empty body)
-        Caddy-->>User: 401 Unauthorized
+    Note over User,Service: Initial state — service requires whitelisting
+
+    alt Proxy mode (default — Knocker acts as auth for a reverse proxy)
+        Note over User,Caddy: Request hits reverse proxy which asks Knocker
+        User->>Caddy: HTTP request to protected service
+        Caddy->>Knocker: GET /verify (copies X-Forwarded-For)
+        Knocker-->>Knocker: check always_allowed_ips / excluded_paths / whitelist
+        alt IP whitelisted
+            Knocker-->>Caddy: 200 OK (empty body)
+            Caddy->>Service: forward request
+            Service-->>Caddy: 200 OK
+            Caddy-->>User: 200 OK
+        else IP not whitelisted
+            Knocker-->>Caddy: 401 Unauthorized (empty body)
+            Caddy-->>User: 401 Unauthorized
+        end
+
+        Note over User,Knocker: Performing a "knock" to add a whitelist entry
+        User->>Knocker: POST /knock (X-Api-Key, optional ip_address, ttl)
+        Knocker->>Knocker: validate API key, determine client IP
+        Knocker->>Knocker: update whitelist.json with expiry
+        Knocker-->>User: 200 OK (whitelisted_entry, expires_at, expires_in_seconds)
+    else Firewall mode (knocker manipulates host firewall rules)
+        Note over User,Firewall: Initial state — monitored port is blocked by default
+        User->>Firewall: TCP SYN to Service:22
+        Firewall-->>User: DROP (no response)
+
+        Note over User,Knocker: User performs a knock to whitelist their IP
+        User->>Knocker: POST /knock (X-Api-Key, optional ip_address, ttl)
+        Knocker->>Knocker: validate API key & determine client IP
+        Knocker->>Firewall: add rich accept rule for client IP on port 22 with timeout
+        Firewall-->>Knocker: success
+
+        Note over Firewall,User: New rule overrides DROP due to higher priority
+        User->>Firewall: TCP SYN to Service:22
+        Firewall->>Service: forward packet
+        Service-->>User: TCP SYN-ACK (connection established)
+        Knocker->>Knocker: update whitelist.json with expiry
     end
-
-    Note over User,Knocker: Performing a "knock" (to add whitelist entry)
-    User->>Knocker: POST /knock (X-Api-Key, optional ip_address, ttl)
-    Knocker->>Knocker: validate API key, determine client IP
-    Knocker->>Knocker: update whitelist.json with expiry
-    Knocker-->>User: 200 OK (whitelisted_entry, expires_at, expires_in_seconds)
 ```
-
 
 ### But Tailscale Already exists!
 
@@ -72,4 +93,4 @@ But In general you should put knocker in front of services that have their own a
 
 ## Setup
 
-Knocker is 
+Knocker is distributed as a docker container, that optionally uses the systen dbus socket to interact with the FirewallD daemon.
