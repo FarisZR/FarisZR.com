@@ -10,5 +10,7 @@ github.com/CaiJimmy/hugo-theme-stack/v3 v3.29.0 h1:6Ahvbvlyi0HrstfDt2yk6BfcAEnW1
 github.com/CaiJimmy/hugo-theme-stack/v3 v3.29.0/go.mod h1:IPmCXiIxlFSLFYS0tOmYP6ySLviyeNVSabyvSuaxD+I=
 github.com/CaiJimmy/hugo-theme-stack/v3 v3.30.0 h1:uITC7EKGyfPjyi3C5At++E0Uu1qQXtqiwMV4pd7LkLs=
 github.com/CaiJimmy/hugo-theme-stack/v3 v3.30.0/go.mod h1:IPmCXiIxlFSLFYS0tOmYP6ySLviyeNVSabyvSuaxD+I=
+github.com/CaiJimmy/hugo-theme-stack/v3 v3.32.0 h1:C5qZXm/XSc6TUHmLJerocpmQz/bWm+ODj0iQ1kRpOkE=
+github.com/CaiJimmy/hugo-theme-stack/v3 v3.32.0/go.mod h1:IPmCXiIxlFSLFYS0tOmYP6ySLviyeNVSabyvSuaxD+I=
 github.com/FarisZR/Hugo-stack-no-cdn v0.0.0-20220705212034-e06f9c087562 h1:vHnKT1KO7ZnN2N/Kqq9eoa5tEPLm5JvWxADwmD/cgWI=
 github.com/FarisZR/Hugo-stack-no-cdn v0.0.0-20220705212034-e06f9c087562/go.mod h1:wXjh6I2Y/sbUZUMHqNeOmjV3fy/QZCAgqsG0ssEU1xo=
