@@ -18,9 +18,13 @@ draft: true
 ---
 
 I have a homelab, but it's very annoying to access it outside my home network, so i created Knocker!
-A knock based access control service for your homelab, that doesn't break the mobile Apps!
+A knock based access control service for your homelab, that doesn't break mobile Apps!
 
 Knocker's strong point is its clients, i built a PWA web app, a go CLI and an Android app, so you are covered on all major platforms.
+
+<!-- markdownlint-disable MD033 -->
+{{< video src="knocker-video.mp4" autoplay="true" poster="./.png" >}}
+<!-- markdownlint-enable MD033 -->
 
 ## How does it work?
 
@@ -86,7 +90,7 @@ Each token has specific permissions like a customizable max TTL (will be capped 
 By connecting knocker to your reverse proxy, knocker will get the request ip and depending on the local whitelists will either give a 200 or a 401 that will be forwarded to the end client.
 
 
-### But Tailscale Already exists!
+### But Tailscale Already Exists?
 
 I already use Tailscale, in fact the IP of my homelab is the tailscale ip because i already added custom routes for the tailscale IPs.
 
@@ -251,3 +255,4 @@ There are no vulns detected by any static code analysis system I ran over the ba
 So this is isn't your avg i told replit to code it project, but still if you are anti AI don't use this please.
 
 I will go into more details about my workflow for implementing knocker using roo code in a separate blog post because it wasn't easy to go so far with Ai.
+ 
