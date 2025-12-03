@@ -19,7 +19,7 @@ draft: true
 
 I have a homelab, but it's very annoying to access it outside my home network, so i created Knocker!
 A knock based access control service for your homelab, that doesn't break mobile Apps!
-With clients that cover all major platforms, web, mobile, and desktop!
+With clients that cover most major platforms, web, android, and desktop!
 
 <!-- markdownlint-disable MD033 -->
 {{< video src="knocker-video.webm" autoplay="true" poster="./.png" >}}
@@ -30,50 +30,26 @@ With clients that cover all major platforms, web, mobile, and desktop!
 ```mermaid
 sequenceDiagram
     participant User
-    participant Caddy as Reverse Proxy (Caddy)
-    participant Firewall as Firewalld (knocker zone)
+    participant Caddy as Reverse Proxy
     participant Knocker
-    participant Service as Protected Service (port 22)
+    participant Service
 
-    Note over User,Service: Initial state — service requires whitelisting
+    Note over User,Service: 1. Access Denied
+    User->>Caddy: Request Service
+    Caddy->>Knocker: Check Access?
+    Knocker-->>Caddy: Denied
+    Caddy-->>User: 401 Unauthorized
 
-    alt Proxy mode (default — Knocker acts as auth for a reverse proxy)
-        Note over User,Caddy: Request hits reverse proxy which asks Knocker
-        User->>Caddy: HTTP request to protected service
-        Caddy->>Knocker: GET /verify (copies X-Forwarded-For)
-        Knocker-->>Knocker: check always_allowed_ips / excluded_paths / whitelist
-        alt IP whitelisted
-            Knocker-->>Caddy: 200 OK (empty body)
-            Caddy->>Service: forward request
-            Service-->>Caddy: 200 OK
-            Caddy-->>User: 200 OK
-        else IP not whitelisted
-            Knocker-->>Caddy: 401 Unauthorized (empty body)
-            Caddy-->>User: 401 Unauthorized
-        end
+    Note over User,Knocker: 2. The "Knock"
+    User->>Knocker: Send Knock (Token)
+    Knocker->>Knocker: Whitelist User IP
 
-        Note over User,Knocker: Performing a "knock" to add a whitelist entry
-        User->>Knocker: POST /knock (X-Api-Key, optional ip_address, ttl)
-        Knocker->>Knocker: validate API key, determine client IP
-        Knocker->>Knocker: update whitelist.json with expiry
-        Knocker-->>User: 200 OK (whitelisted_entry, expires_at, expires_in_seconds)
-    else Firewall mode (knocker manipulates host firewall rules)
-        Note over User,Firewall: Initial state — monitored port is blocked by default
-        User->>Firewall: TCP SYN to Service:22
-        Firewall-->>User: DROP (no response)
-
-        Note over User,Knocker: User performs a knock to whitelist their IP
-        User->>Knocker: POST /knock (X-Api-Key, optional ip_address, ttl)
-        Knocker->>Knocker: validate API key & determine client IP
-        Knocker->>Firewall: add rich accept rule for client IP on port 22 with timeout
-        Firewall-->>Knocker: success
-
-        Note over Firewall,User: New rule overrides DROP due to higher priority
-        User->>Firewall: TCP SYN to Service:22
-        Firewall->>Service: forward packet
-        Service-->>User: TCP SYN-ACK (connection established)
-        Knocker->>Knocker: update whitelist.json with expiry
-    end
+    Note over User,Service: 3. Access Granted
+    User->>Caddy: Request Service
+    Caddy->>Knocker: Check Access?
+    Knocker-->>Caddy: Allowed
+    Caddy->>Service: Forward Request
+    Service-->>User: Response
 ```
 
 By being completely transparent for whitelisted IPs, knocker doesn't break any api client like mobile apps.
@@ -193,36 +169,50 @@ Now your service will responed with a 401 for every non-whitelisted IP.
 
 Knocker has another trick up its sleeve, it can integrate with firewalld to operate on the firewall level, so that you can use it for non-http services like a game server!
 
+```mermaid
+sequenceDiagram
+    participant User
+    participant Firewall
+    participant Knocker
+    participant Service
+
+    Note over User,Service: 1. Port Blocked
+    User->>Firewall: Connect to Service
+    Firewall--xUser: Drop Connection
+
+    Note over User,Knocker: 2. The "Knock"
+    User->>Knocker: Send Knock (Token)
+    Knocker->>Firewall: Open Port for User IP
+
+    Note over User,Service: 3. Access Granted
+    User->>Firewall: Connect to Service
+    Firewall->>Service: Allow Traffic
+    Service-->>User: Connected
+```
+
 <!-- markdownlint-disable MD033 -->
 {{< video src="firewall-demo.webm" autoplay="true" poster="./.png" >}}
 <!-- markdownlint-enable MD033 -->
 
-An important note though, **exposed Docker Ports will still bypass these rules.**
+there's a caveat though, **exposed Docker Ports will still bypass these rules.**
 Unfortunately there's isn't any firewall that actually deals with docker port forwarding rules well.
 You have to use host networking mode for it to work.
 
 ```yaml
 firewalld:
   enabled: true 
-  zone_name: "knocker"  # Name of the firewalld zone to create
+  zone_name: "knocker" 
                         # WARNING: Zone won't be cleaned up automatically on shutdown
   zone_priority: -100  # Zone priority (negative numbers = higher priority)
-                       # Default -100 ensures knocker rules take precedence
   # zone_target: "default"  # Optional: Set the zone target (default: not set)
                             # Options: "default", "ACCEPT", "REJECT", "DROP"
                             # "default" = practically matches reject behavior
                             # "ACCEPT" = Accept all packets not matched by rules set by knocker
                             # "REJECT" = Reject all packets not matched by rules set by knocker
                             # "DROP" = Silently drop all packets not matched by rules set by knocker
-                            # Note: When not specified, the zone target is not set, and the default target will be used.
-                            # Firewalld docs: https://firewalld.org/documentation/zone/options.html
   default_action: "drop"  # Action for blocked traffic on monitored ports:
-                          # "drop" = silently discard (attackers don't know service exists)
-                          # "reject" = refuse connection (faster for legitimate clients)
   monitored_ports:
     # Only these ports will be protected by knocker firewall rules
-    # Unmonitored ports remain unaffected by knocker
-    # Only whitelisted IPs can access these specific ports
     - port: 80
       protocol: tcp
     - port: 443
@@ -230,57 +220,34 @@ firewalld:
     - port: 22
       protocol: tcp
   monitored_ips:
-    # IP ranges that the firewalld zone will apply to
-    # MUST include network mask (e.g., /32 for single IPv4 host, /128 for single IPv6 host)
-    # 
     # WARNING: Using 0.0.0.0/0 or ::/0 applies DROP/REJECT rules to ALL traffic
-    # at high priority. This will block ALL access to monitored ports by default.
-    # Start with narrow ranges (your WAN subnet) and expand carefully.
-    #
-    # Examples:
-    # - "192.168.1.100/32"    # Single IPv4 host
-    # - "192.168.1.0/24"      # IPv4 subnet
-    # - "2001:db8::1/128"     # Single IPv6 host
-    # - "2001:db8::/32"       # IPv6 prefix
-    # - "203.0.113.0/24"      # Your WAN IPv4 range
-    # - "2001:db8:1234::/48"  # Your WAN IPv6 range
-    # - "0.0.0.0/0"           # All IPv4 (USE WITH EXTREME CAUTION)
-    # - "::/0"                # All IPv6 (USE WITH EXTREME CAUTION)
     - "203.0.113.0/24"        # Example WAN IPv4 range - CHANGE THIS
     - "2001:db8:1234::/48"    # Example WAN IPv6 range - CHANGE THIS
-  
-  # CONTAINER REQUIREMENTS:
-  # - Must run as root (user: "0:0")
-  # - Needs NET_ADMIN capability
-  # - Requires system dbus mount: /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket:ro
-  # - Host must have firewalld installed and running
-  #
-  # See docs/FIREWALLD_INTEGRATION.md for complete setup instructions
 ```
 
 ## Clients
 
 The strong point of Knocker, and where i actually spent most of my time was the clients.
-i designed the clients to get out of the way as much as possible.
+i designed the clients to get out of the way as much as possible.·
 
 ### Knocker-Web
 
-![Knocker-Web](knocker-web.webp)
+[GitHub.com/FarisZR/Knocker-Web](https://github.com/FarisZR/Knocker-Web)
 
-[https://github.com/FarisZR/Knocker-Web](https://github.com/FarisZR/Knocker-Web)
+![Knocker-Web](knocker-web.webp)
 
 Knocker Web is a web client built with Vite.
 it's fully static, and can be installed as a PWA, and it's meant to be the leading client, as it basically works everywhere.
 
 What makes it really convenient though is the knock on reload feature.
 You just open the site and that's it, you don't care what happens after that.
-It's especially useful when used as a PWA
+It's especially useful when used as a PWA, as it means it will do a knock when started.
 
 ### Knocker-CLI
 
 [GitHub.com/FarisZR/knocker-CLI](https://github.com/FarisZR/knocker-CLI)
 
-A cli client written in Go with support for creating a background service for periodic knocks using Systemd/LaunchAgent.
+A CCI client written in Go with support for creating a background service for periodic knocks using Systemd/LaunchAgent.
 
 ```sh
 >> knocker --help
@@ -315,6 +282,8 @@ Use "knocker [command] --help" for more information about a command.
 
 #### Knocker-Gnome
 
+[GitHub.com/FarisZR/knocker-Gnome](https://github.com/FarisZR/knocker-Gnome)
+
 ![](knocker-gnome.webp)
 
 An experimental Gnome extension that interprets the JSON logs output by Knocker-CLI, and allows you to manually trigger knocks, disable the service and see the timeout for the current knock.
@@ -341,4 +310,4 @@ There are no vulns detected by any static code analysis system I ran over the ba
 
 So this is isn't your avg i told replit to code it project, but still if you are anti AI don't use this please.
 
-I will go into more details about my workflow for implementing knocker using roo code in a separate blog post because it wasn't easy to go so far with Ai.
+I may go into more details about my workflow for implementing knocker using roo code in a separate blog post because it wasn't easy to go so far with Ai.
