@@ -216,6 +216,8 @@ params:
   featuredImageField: image
   rssFullContent: true
   favicon: /favicon.webp
+  # A theme / partial friendly param to allow templates to set image quality per-site.
+  imageQuality: 95
 
   footer:
     since: 2022
@@ -274,6 +276,13 @@ params:
       enabled: true
     content:
       enabled: true
+
+imaging:
+  # Global default encoding quality Hugo uses when generating images (0-100).
+  # Higher values reduce compression artifacts; set to 90-95 for better quality.
+  quality: 92
+  # A good resampling filter; Lanczos gives sharper results when resizing.
+  resampleFilter: Lanczos
 
   comments:
       enabled: true
