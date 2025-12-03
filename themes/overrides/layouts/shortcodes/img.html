@@ -1,0 +1,59 @@
+{{- /*
+  Image shortcode with resize support and PhotoSwipe gallery integration.
+  
+  Parameters:
+    - src: Image source (required) - filename in page bundle or URL
+    - alt: Alt text, also used as caption (optional)
+    - height: Max height using CSS units (e.g., "50vh", "300px", "20rem")
+    - class: Additional CSS classes (optional)
+  
+  Usage:
+    {{< img src="image.webp" alt="Description" height="50vh" >}}
+    {{< img src="image.webp" height="300px" >}}
+  
+  Note: This outputs a pre-wrapped figure that Stack's JS will recognize for PhotoSwipe
+  but won't re-wrap since figure already has gallery-image class.
+*/ -}}
+
+{{- $src := .Get "src" | default (.Get 0) -}}
+{{- $alt := .Get "alt" | default "" -}}
+{{- $height := .Get "height" -}}
+{{- $class := .Get "class" | default "" -}}
+
+{{- $image := .Page.Resources.GetMatch $src -}}
+
+{{- if $image -}}
+  {{- /* Page bundle image */ -}}
+  {{- $originalWidth := $image.Width -}}
+  {{- $originalHeight := $image.Height -}}
+
+{{- /* Output pre-wrapped figure - Stack's JS skips images already in figure.gallery-image */ -}}
+<figure class="gallery-image{{ with $class }} {{ . }}{{ end }}" style="flex-grow: {{ printf "%.0f" (div (mul $originalWidth 100.0) $originalHeight) }}; flex-basis: {{ $originalWidth }}px;{{ with $height }} --img-max-height: {{ . }};{{ end }}">
+  <a href="{{ $image.RelPermalink }}"{{ with $height }} style="display: block;"{{ end }}>
+    <img 
+      src="{{ $image.RelPermalink }}"
+      width="{{ $originalWidth }}"
+      height="{{ $originalHeight }}"
+      loading="lazy"
+      {{- with $alt }} alt="{{ . }}"{{ end }}
+      {{- with $height }} style="max-height: {{ . }}; width: auto; height: auto;"{{ end }}
+    >
+  </a>
+  {{- with $alt }}
+  <figcaption>{{ . }}</figcaption>
+  {{- end }}
+</figure>
+{{- else -}}
+  {{- /* External URL or not found - render simple img tag without gallery */ -}}
+<figure{{ with $class }} class="{{ . }}"{{ end }}>
+  <img 
+    src="{{ $src }}"
+    {{- with $alt }} alt="{{ . }}"{{ end }}
+    {{- with $height }} style="max-height: {{ . }}; width: auto; height: auto;"{{ end }}
+    loading="lazy"
+  >
+  {{- with $alt }}
+  <figcaption>{{ . }}</figcaption>
+  {{- end }}
+</figure>
+{{- end -}}

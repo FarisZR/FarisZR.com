@@ -287,7 +287,7 @@ An experimental Gnome extension that interprets the JSON logs output by Knocker-
 
 [GitHub.com/FarisZR/knocker-expo](https://github.com/FarisZR/knocker-expo)
 
-![Knocker EXPO](knocker-expo.webp)
+{{< img src="knocker-expo.webp" alt="Knocker EXPO" height="70vh" >}}
 
 An experimental Android App built using React EXPO.
 It does the same thing as the PWA, with support for creating a background service to regularly create knocks.
