@@ -17,9 +17,9 @@ keywords:
 draft: true
 ---
 
-I have a homelab, but accessing it from outside my home network was always a pain. I didn't want to deal with the hassle of toggling VPNs on every device just to watch something on Jellyfin, so I created **Knocker**!
+I have a homelab, but accessing it from outside my home network was always a pain. I didn't want to deal with the hassle of toggling VPNs on every device just to watch something on Jellyfin, so I created Knocker!
 
-It's a knock-based access control service for your homelab that actually plays nice with mobile apps. It has clients for Web, Android, and Desktop.
+It's a knock-based access control service for your homelab that actually works with mobile apps with clients on most platforms used by homelabbers.
 
 <!-- markdownlint-disable MD033 -->
 {{< video src="knocker-video.webm" autoplay="true" poster="./.png" >}}
@@ -76,7 +76,7 @@ Knocker is a compromise. It trades some security for a lot of convenience. You c
 
 You're basically making a bet that within that short whitelist window, the likelihood of a hacker scanning your specific port and attacking it is pretty slim.
 
-That's why you should use short TTLs on public networks. In general, put Knocker in front of services that already have their own authentication.
+That's why you should use short TTLs on public networks. In general, Knocker should be used in front of services that already have their own authentication.
 
 ## Setup
 
@@ -297,7 +297,7 @@ However, its reliability depends on the manufacturer, as not all of them actuall
 ## Vibe Coded with AI
 
 Thanks to the Roo Code hackathon (sponsored by Requestly and Google), I finally had the excuse to build this.
-I started with Gemini 2.5 Pro, burned through over $1700 in tokens, and eventually moved to GPT-5-CODEX and GitHub Coding Agent (Sonnet 4) to build out features.
+I started with Gemini 2.5 Pro, burned through over $1700 in tokens, and eventually moved to GPT-5-CODEX and GitHub Coding Agent (Sonnet 4 later Sonnet 4.5) to build out features.
 
 I used CodeRabbit for reviews and set up a full integration test environment for the agents to iterate against that's why this thing actually works at all.
 
