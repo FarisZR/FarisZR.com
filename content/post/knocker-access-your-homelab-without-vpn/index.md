@@ -1,5 +1,5 @@
 ---
-title: "Knocker: access your homelab from outside without needing a VPN!"
+title: "Knocker: Access Your Homelab From Outside Without Needing a VPN!"
 date: 2025-11-27
 tags:
     - Homelab
@@ -17,9 +17,9 @@ keywords:
 draft: true
 ---
 
-I have a homelab, but it's very annoying to access it outside my home network, so i created Knocker!
-A knock based access control service for your homelab, that doesn't break mobile Apps!
-With clients that cover most major platforms, web, android, and desktop!
+I have a homelab, but accessing it from outside my home network was always a pain. I didn't want to deal with the hassle of toggling VPNs on every device just to watch something on Jellyfin, so I created **Knocker**!
+
+It's a knock-based access control service for your homelab that actually plays nice with mobile apps. It has clients for Web, Android, and Desktop.
 
 <!-- markdownlint-disable MD033 -->
 {{< video src="knocker-video.webm" autoplay="true" poster="./.png" >}}
@@ -52,42 +52,37 @@ sequenceDiagram
     Service-->>User: Response
 ```
 
-By being completely transparent for whitelisted IPs, knocker doesn't break any api client like mobile apps.
-Whitelist your ip and you are ready.
-You can even whitelist another ip other than your own if you want.
+By being completely transparent for whitelisted IPs, Knocker doesn't break API clients like mobile apps. Once you whitelist your IP, you are ready to go. You can even whitelist an IP other than your own if needed.
 
+### Knocker Tokens
 
-### Knocker tokens
+Knocker works by using tokens as passwords. Each token has specific permissions, like a customizable max TTL (capped server-side) and an option to allow whitelisting IPs other than your own.
 
-Knocker works by using tokens as passwords.
-Each token has specific permissions like a customizable max TTL (will be capped server side), and an option to allow whitelisting IPs other than your own.
+By connecting Knocker to your reverse proxy, Knocker will analyze the request IP. Depending on the local whitelists, it will either return a `200 OK` or a `401 Unauthorized` status, which is then forwarded to the end client.
 
-By connecting knocker to your reverse proxy, knocker will get the request ip and depending on the local whitelists will either give a 200 or a 401 that will be forwarded to the end client.
+## Why Not Just Use a VPN?
 
+I already use Tailscale. In fact, the IP of my homelab is the Tailscale IP because I added custom routes for it.
 
-## But Tailscale Already Exists?
+But using a VPN for everything is annoying. You have to install it on every single device, which is a nightmare on things like Smart TVs. Plus, keeping the Tailscale app running on Android drains my battery like crazy.
 
-I already use Tailscale, in fact the IP of my homelab is the tailscale ip because i already added custom routes for the tailscale IPs.
-
-But using a vpn is annoying, it has to be installed on each device, which is a hassle on a smart TV for example and the Tailscale app on android kills the battery life.
-
-With knocker you just need one device to allow the entire network (thanks to NAT).
+With Knocker, you just need one device to knock, and thanks to NAT, your whole network gets access.
 
 ### Is this as secure as a VPN?
 
-NO.
-Knocker is a compromise, it's more convenient than a VPN (IMO), but because of this convenience it's also not as secure, as you can't whitelist devices, rather only Source IPs, and IPs that could be CGNAT IPs.
+**No.**
 
-You are basically making a bet that within that whitelist period, the likelyhood of a hacker finding out about your service and trying to hack it is quite slim.
+Knocker is a compromise. It trades some security for a lot of convenience. You can't whitelist specific devices, only Source IPs (which might be shared CGNAT IPs).
 
-That's why you also should use short TTLs in public networks
-But In general you should put knocker in front of services that are authenticated
+You're basically making a bet that within that short whitelist window, the likelihood of a hacker scanning your specific port and attacking it is pretty slim.
+
+That's why you should use short TTLs on public networks. In general, put Knocker in front of services that already have their own authentication.
 
 ## Setup
 
-Knocker is distributed as a docker container, that optionally uses the systen dbus socket to interact with the FirewallD daemon.
+Knocker is distributed as a Docker container that optionally uses the system DBus socket to interact with the FirewallD daemon.
 
-docker.compose.yml: https://github.com/FarisZR/knocker/blob/main/docker-compose.yml
+docker.compose.yml: [https://github.com/FarisZR/knocker/blob/main/docker-compose.yml](https://github.com/FarisZR/knocker/blob/main/docker-compose.yml)
 
 ### knocker.yaml
 
@@ -102,7 +97,7 @@ server:
     - "fd00:dead:beef::/64"
 
 cors:
-  allowed_origin: "https://knocker.fariszr.com"  # SECURITY: Set to your Knocker web webapp's origin if you are hosting your own.
+  allowed_origin: "https://knocker.fariszr.com"  # SECURITY: Set to your Knocker webapp's origin if you are hosting your own.
 
 security:
   always_allowed_ips:
@@ -111,7 +106,7 @@ security:
     # It's recommended to include your reverse proxy's IP here.
     - "172.16.238.0/24"
     - "fd00:dead:beef::/64"
-    # Also your homes local network
+    # Also your home's local network
     - "192.168.1.0/24"
   excluded_paths:
     # Request paths that start with any of these values will bypass
@@ -136,9 +131,9 @@ api_keys:
     allow_remote_whitelist: true  # Can whitelist other IP/CIDR specified in request body
 ```
 
-### Connecting your reverse proxy to knocker
+### Connecting Your Reverse Proxy to Knocker
 
-I use Caddy, but knocker should work with any reverse proxy that supports using an external auth endpoint.
+I use Caddy, but Knocker should work with any reverse proxy that supports using an external auth endpoint.
 
 ```caddy
 # Define a reusable snippet for the knock-knock check.
@@ -163,11 +158,11 @@ jellyfin.your-domain.com {
 }
 ```
 
-Now your service will responed with a 401 for every non-whitelisted IP.
+Now your service will respond with a `401 Unauthorized` for every non-whitelisted IP.
 
-## FirewallD integration
+## FirewallD Integration
 
-Knocker has another trick up its sleeve, it can integrate with firewalld to operate on the firewall level, so that you can use it for non-http services like a game server!
+Knocker has another trick up its sleeve: it can integrate with FirewallD to operate on the firewall level, allowing you to use it for non-HTTP services like a game server!
 
 ```mermaid
 sequenceDiagram
@@ -194,8 +189,8 @@ sequenceDiagram
 {{< video src="firewall-demo.webm" autoplay="true" poster="./.png" >}}
 <!-- markdownlint-enable MD033 -->
 
-there's a caveat though, **exposed Docker Ports will still bypass these rules.**
-Unfortunately there's isn't any firewall that actually deals with docker port forwarding rules well.
+There is a caveat, though: **exposed Docker Ports will still bypass these rules.**
+Unfortunately, there isn't any firewall that deals with Docker port forwarding rules well.
 You have to use host networking mode for it to work.
 
 ```yaml
@@ -227,8 +222,8 @@ firewalld:
 
 ## Clients
 
-The strong point of Knocker, and where i actually spent most of my time was the clients.
-i designed the clients to get out of the way as much as possible.·
+The strong point of Knocker, and where I actually spent most of my time, is the clients.
+I designed them to get out of the way as much as possible.
 
 ### Knocker-Web
 
@@ -237,17 +232,17 @@ i designed the clients to get out of the way as much as possible.·
 ![Knocker-Web](knocker-web.webp)
 
 Knocker Web is a web client built with Vite.
-it's fully static, and can be installed as a PWA, and it's meant to be the leading client, as it basically works everywhere.
+It's fully static and can be installed as a PWA. It's meant to be the primary client, as it works basically everywhere.
 
-What makes it really convenient though is the knock on reload feature.
-You just open the site and that's it, you don't care what happens after that.
-It's especially useful when used as a PWA, as it means it will do a knock when started.
+What makes it really convenient is the "knock on reload" feature.
+You just open the site and that's it; you don't care what happens after that.
+It's especially useful when used as a PWA, as it means it will perform a knock when opened.
 
 ### Knocker-CLI
 
 [GitHub.com/FarisZR/knocker-CLI](https://github.com/FarisZR/knocker-CLI)
 
-A CCI client written in Go with support for creating a background service for periodic knocks using Systemd/LaunchAgent.
+A CLI client written in Go with support for creating a background service for periodic knocks using Systemd/LaunchAgent.
 
 ```sh
 >> knocker --help
@@ -284,9 +279,9 @@ Use "knocker [command] --help" for more information about a command.
 
 [GitHub.com/FarisZR/knocker-Gnome](https://github.com/FarisZR/knocker-Gnome)
 
-![](knocker-gnome.webp)
+![Knocker Gnome Extension](knocker-gnome.webp)
 
-An experimental Gnome extension that interprets the JSON logs output by Knocker-CLI, and allows you to manually trigger knocks, disable the service and see the timeout for the current knock.
+An experimental Gnome extension that interprets the JSON logs output by Knocker-CLI, and allows you to manually trigger knocks, disable the service, and see the timeout for the current knock.
 
 ### Knocker-EXPO
 
@@ -294,20 +289,20 @@ An experimental Gnome extension that interprets the JSON logs output by Knocker-
 
 ![Knocker EXPO](knocker-expo.webp)
 
-An Experimtal Android App built using React EXPO.
-it does the same thing as the PWA, with support for creating a background service to regularly create knocks.
+An experimental Android App built using React EXPO.
+It does the same thing as the PWA, with support for creating a background service to regularly create knocks.
 
-However its reliability depends on the manufacture, as not all of them actually allow android background processes to run reliabily.
+However, its reliability depends on the manufacturer, as not all of them actually allow Android background processes to run reliably.
 
-## vibe coded with Ai
+## Vibe Coded with AI
 
-Thanks to the roo code hackathon sponsored by Requestly and Google I could actually implement this idea.
-I started the project with gemini 2.5 pro, reached over 1700$ in used tokens for the service and the clients, but the continued using GPT-5-CODEX and github coding agent (Sonnet 4 mostly) as a starter point for new featurss.
+Thanks to the Roo Code hackathon (sponsored by Requestly and Google), I finally had the excuse to build this.
+I started with Gemini 2.5 Pro, burned through over $1700 in tokens, and eventually moved to GPT-5-CODEX and GitHub Coding Agent (Sonnet 4) to build out features.
 
-I used coderabbit for reviews, and had a full integration test environment for the agents to iterate against, that's why the project even works in the first place.
+I used CodeRabbit for reviews and set up a full integration test environment for the agents to iterate against that's why this thing actually works at all.
 
-There are no vulns detected by any static code analysis system I ran over the backend service.
+I ran static analysis on the backend and found zero vulnerabilities, so there's that.
 
-So this is isn't your avg i told replit to code it project, but still if you are anti AI don't use this please.
+What im trying to see is, this is isn't your avg i told replit to code it project, but still if you are anti AI don't use this please.
 
 I may go into more details about my workflow for implementing knocker using roo code in a separate blog post because it wasn't easy to go so far with Ai.
