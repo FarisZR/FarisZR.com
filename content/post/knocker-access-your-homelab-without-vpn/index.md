@@ -1,25 +1,25 @@
 ---
-title: "Knocker: Access Your Homelab From Outside Without Needing a VPN!"
-date: 2025-11-27
+title: "Knocker: Skip the VPN for your homelab, Just Knock"
+date: 2025-12-14
 tags:
     - Homelab
     - knock-based
     - firewall
     - reverse-proxy
     - Knocker
-# image: thumbnail.jpg
 slug: knocker-access-your-homelab-without-vpn
 keywords:
   - Homelab
   - Tailscale
   - VPN
   - Firewall
-draft: true
+image: thumbnail.jpeg
+description: Knocker is a knock-based access control system that lets you whitelist your IP with a simple token request. skipping the nightmare of setting up a VPN on every device. Just knock and your whole network gets access.
 ---
 
-I have a homelab, but accessing it from outside my home network was always a pain. I didn't want to deal with the hassle of toggling VPNs on every device just to watch something on Jellyfin, so I created Knocker!
+I have a homelab, but accessing it from outside my home network was always a pain. I didn't want to deal with the hassle of setting up VPNs on every device just to watch something on Jellyfin, so I built Knocker!
 
-It's a knock-based access control service for your homelab that actually works with mobile apps with clients on most platforms used by homelabbers.
+It's a knock-based access control service for your homelab that actually works with mobile apps, with clients on most platforms used by homelabbers.
 
 <!-- markdownlint-disable MD033 -->
 {{< video src="knocker-video.webm" autoplay="true" poster="./.png" >}}
@@ -68,11 +68,11 @@ But using a VPN for everything is annoying. You have to install it on every sing
 
 With Knocker, you just need one device to knock, and thanks to NAT, your whole network gets access.
 
-### Is this as secure as a VPN?
+### Is This as Secure as a VPN?
 
-**No.**
+No.
 
-Knocker is a compromise. It trades some security for a lot of convenience. You can't whitelist specific devices, only Source IPs (which might be shared CGNAT IPs).
+Knocker is a compromise. It trades some security for convenience. You can't whitelist specific devices, only source IPs (which might be shared CGNAT IPs).
 
 You're basically making a bet that within that short whitelist window, the likelihood of a hacker scanning your specific port and attacking it is pretty slim.
 
@@ -82,7 +82,7 @@ That's why you should use short TTLs on public networks. In general, Knocker sho
 
 Knocker is distributed as a Docker container that optionally uses the system DBus socket to interact with the FirewallD daemon.
 
-docker.compose.yml: [https://github.com/FarisZR/knocker/blob/main/docker-compose.yml](https://github.com/FarisZR/knocker/blob/main/docker-compose.yml)
+`docker-compose.yml`: [github.com/FarisZR/knocker](https://github.com/FarisZR/knocker/blob/main/docker-compose.yml)
 
 ### knocker.yaml
 
@@ -189,7 +189,7 @@ sequenceDiagram
 {{< video src="firewall-demo.webm" autoplay="true" poster="./.png" >}}
 <!-- markdownlint-enable MD033 -->
 
-There is a caveat, though: **exposed Docker Ports will still bypass these rules.**
+There is a caveat, though: **exposed bridge Docker ports will still bypass these rules.**
 Unfortunately, there isn't any firewall that deals with Docker port forwarding rules well.
 You have to use host networking mode for it to work.
 
@@ -290,19 +290,19 @@ An experimental Gnome extension that interprets the JSON logs output by Knocker-
 {{< img src="knocker-expo.webp" alt="Knocker EXPO" height="70vh" >}}
 
 An experimental Android App built using React EXPO.
-It does the same thing as the PWA, with support for creating a background service to regularly create knocks.
+It does the same thing as the PWA, with support for creating a background service to regularly send knocks.
 
 However, its reliability depends on the manufacturer, as not all of them actually allow Android background processes to run reliably.
 
 ## Vibe Coded with AI
 
 Thanks to the Roo Code hackathon (sponsored by Requestly and Google), I finally had the excuse to build this.
-I started with Gemini 2.5 Pro, burned through over $1700 in tokens, and eventually moved to GPT-5-CODEX and GitHub Coding Agent (Sonnet 4 later Sonnet 4.5) to build out features.
+I started with Gemini 2.5 Pro, burned through over $1700 in tokens, and eventually moved to GPT-5-CODEX and GitHub Coding Agent (Sonnet 4, later Sonnet 4.5) to build out features.
 
 I used CodeRabbit for reviews and set up a full integration test environment for the agents to iterate against that's why this thing actually works at all.
 
 I ran static analysis on the backend and found zero vulnerabilities, so there's that.
 
-What im trying to see is, this is isn't your avg i told replit to code it project, but still if you are anti AI don't use this please.
+What I'm trying to say is, this isn't your average "I told Replit to code it" project, but still, if you're anti-AI, don't use this please.
 
-I may go into more details about my workflow for implementing knocker using roo code in a separate blog post because it wasn't easy to go so far with Ai.
+I may go into more details about my workflow for implementing Knocker using Roo Code in a separate blog post, because it wasn't easy to go this far with AI.
