@@ -40,7 +40,7 @@ That means your agent can also adjust how Komodo itself works on the fly.
 ### My secret sauce: The Komodo KM CLI, agentic edition.
 
 Komodo has a powerful API, but the official CLI doesn't expose all of it.
-So I built my own version, the "agentic" edition.
+So I built my own version, [the "agentic" edition](https://github.com/FarisZR/komodo-agentic-cli/tree/agentic-cli/bin/cli).
 It adds support for:
 
 - `stack` - manage stacks and see their status
@@ -68,6 +68,19 @@ That's the idea behind async personal assistants like OpenClaw and the newer Her
 Just clone the git repo, install the agentic KM CLI skill, and your agent can debug and fix any issue across your homelab, even a multi-server network.
 
 Homelabbing becomes genuinely fun. You say what you want and it appears. You can see what changed, revert it easily thanks to git, and even set up backups to guard against catastrophic failures, though most models are smart enough to not do the classic `rm -rf` mistake anymore. Still nice to have.
+
+### Openclaw in action
+
+So how does this look in reality? What can I use this for? Well, I quickly found a use for this.
+
+I self-host my own language tool server and it breaks often. So why not let OpenClaw figure out a solution for it?
+
+![my openclaw assistant Dax on Matrix (gpt 5.3-codex)](openclaw-1.png)
+
+After telling it to investigate and actually solve the issue, it deployed a new modified docker stack that added a memory limit to the container
+![the fix it found out](openclaw-2.png)
+
+I legit did this while i was cooking in the kitchen, didn't need to do anything manually.
 
 ## The next step: full automation.
 
