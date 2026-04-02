@@ -82,6 +82,11 @@ After telling it to investigate and actually solve the issue, it deployed a new 
 
 I legit did this while i was cooking in the kitchen, didn't need to do anything manually.
 
+I also used it to see if any of my servers had LiteLLM
+installed after the CVE was made public.
+
+![OpenClaw using komodo to check if litellm is installed anywhere](litellm-example.webp)
+
 ## The next step: full automation.
 
 Deploying new services and fixing containers on demand is great. But what if things never broke in the first place? What if your agent fixed issues as they happened, not as you noticed them?
